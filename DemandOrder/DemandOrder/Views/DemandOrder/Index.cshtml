@@ -1,0 +1,150 @@
+﻿@model DemandOrder.Models.OrdersCountViewModel
+
+@{
+    ViewBag.Title = "需求單";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>需求單</h2>
+
+@*order 部門選擇*@
+<div class="row">
+
+    @using (Html.BeginForm())
+    {
+        <div class="col-md-4 row">
+
+            @Html.DropDownList("Dept", Model.DeptList, new { @class="form-control"})
+
+            <input type="submit" value="確認" class="form-control"/>
+
+        </div>
+    }
+
+    <div class="col-md-offset-10">
+
+        <input type="button" value="Excel"/>
+
+    </div>
+
+</div>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("需求單")
+        </th>
+
+        @{ 
+            for(int i = -11; i <=0; i++)
+            {
+                <th>
+                    @Html.DisplayName(string.Format("{0}年{1}月", DateTime.Now.AddMonths(i).Year, DateTime.Now.AddMonths(i).Month))
+                </th>
+            }
+        }
+
+        <th></th>
+    </tr>
+
+    <tr>
+
+        @*state若為 受理就是未完成*@
+        <th>受理</th>
+
+        @{ 
+            for (int i = -11; i <= 0; i++)
+            {
+                <td align="center">
+
+                    @{ var count = Model.Orders.Where(model => model.ExpectStartDate.Month == DateTime.Now.AddMonths(i).Month)
+                                                .Count();}
+
+                    @string.Format("{0}", count)
+
+                </td>
+            }
+        }
+
+    </tr>
+
+    <tr>
+
+        <th>完成</th>
+
+        @{
+            for (int i = -11; i <= 0; i++)
+            {
+                <td align="center">
+
+                    @{ var count = Model.Orders.Where(model => model.State == "完成")
+                                                .Where(model => model.ExpectStartDate.Month == DateTime.Now.AddMonths(i).Month)
+                                                .Count();}
+
+                    @string.Format("{0}", count)
+
+                </td>
+            }
+        }
+
+    </tr>
+
+    <tr>
+
+        <th>未完成</th>
+
+        @{
+            for (int i = -11; i <= 0; i++)
+            {
+                <td align="center">
+
+                    @{ var count = Model.Orders.Where(model => model.State == "受理")
+                                                .Where(model => model.ExpectStartDate.Month == DateTime.Now.AddMonths(i).Month)
+                                                .Count();}
+
+                    @string.Format("{0}", count)
+
+                </td>
+            }
+        }
+        
+    </tr>
+
+    <tr>
+
+        <th>累計未完成</th>
+
+        @{
+            for (int i = -11; i <= 0; i++)
+            {
+                <td align="center">
+
+                    @{ var count = Model.Orders.Where(model => model.State == "受理")
+                                                .Where(model => model.ExpectStartDate.Date < DateTime.Now.AddMonths(i).Date)
+                                                .Count();}
+
+                    @string.Format("{0}", count)
+
+                </td>
+            }
+        }
+
+    </tr>
+
+</table>
+
+<br />
+
+<div>
+    @{
+        var myChart = new Chart(width: 600, height: 400)
+            .AddTitle("Chart Title")
+            .AddSeries(
+                name: "Employee",
+                xValue: new[] { "Peter", "Andrew", "Julie", "Mary", "Dave" },
+                yValues: new[] { "2", "6", "4", "5", "3" })
+            .Write();
+    }
+</div>

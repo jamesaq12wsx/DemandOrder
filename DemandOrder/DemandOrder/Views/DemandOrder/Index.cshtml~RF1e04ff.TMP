@@ -1,0 +1,131 @@
+﻿@model List<DemandOrder.Models.OrderViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>需求單總攬</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("需求單")
+        </th>
+
+        @{ 
+            for(int i = -11; i <=0; i++)
+            {
+                <th>
+                    @Html.DisplayName(string.Format("{0}年{1}月", DateTime.Now.AddMonths(i).Year, DateTime.Now.AddMonths(i).Month))
+                </th>
+            }
+        }
+
+        @*<th>
+            @Html.DisplayName(string.Format("{0}",DateTime.Now.AddMonths(-11).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-10).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-9).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-8).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-7).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-6).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-5).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-4).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-3).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-2).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.AddMonths(-1).Month))
+        </th>
+        <th>
+            @Html.DisplayName(string.Format("{0}", DateTime.Now.Month))
+        </th>*@
+        <th></th>
+    </tr>
+
+@*@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplyDept)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplySec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ITDept)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectCompleteDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectRecieveDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectFinishDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcceptionTestStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcceptionTestFinishDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseCloseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintainLine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintainITDept)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintainITSec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemandDutyPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}*@
+
+</table>
