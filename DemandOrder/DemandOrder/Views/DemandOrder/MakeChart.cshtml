@@ -1,0 +1,61 @@
+﻿@model DemandOrder.Models.OrdersCountViewModel
+
+@{
+    Layout = null;
+}
+
+
+@{
+    var list = Model.StateList;
+
+    List<string> yearMonth = new List<string>();
+
+    for (int i = -11; i <= 0; i++)
+    {
+        string dt = "";
+
+        dt = string.Format("{0}年{1}月", DateTime.Now.AddMonths(i).Year, DateTime.Now.AddMonths(i).Month);
+
+        yearMonth.Add(dt);
+    }
+
+    var xaxisArr = yearMonth.ToArray();
+
+    var applyArr = list.Where(model => model.state == "受理")
+                       .Select(model => string.Format("{0}", model.count))
+                       .ToArray();
+
+    var casefinishArr = list.Where(model => model.state == "結案")
+                            .Select(model => string.Format("{0}", model.count))
+                            .ToArray();
+
+    var caseUnFinishArr = list.Where(model => model.state == "未完成")
+                              .Select(model => string.Format("{0}", model.count))
+                              .ToArray();
+
+    var myChart = new Chart(width: 800, height: 400)
+            .AddTitle("需求單")
+            .AddSeries(
+                name: "受理",
+                chartType: "line",
+                xValue: xaxisArr,
+                yValues: applyArr,
+                legend: "受理")
+            .AddSeries(
+                name: "結案",
+                chartType: "line",
+                xValue: xaxisArr,
+                yValues: casefinishArr,
+                legend: "結案")
+            .AddSeries(
+                name: "未完成",
+                chartType: "line",
+                xValue: xaxisArr,
+                yValues: caseUnFinishArr,
+                legend: "未完成")
+            .AddLegend("需求單", "受理")
+            .AddLegend("需求單", "結案")
+            .AddLegend("需求單", "未完成");
+    myChart.Write();
+
+}

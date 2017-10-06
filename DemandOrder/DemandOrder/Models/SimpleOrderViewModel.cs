@@ -11,6 +11,9 @@ namespace DemandOrder.Models
         [DisplayName("需求單編號")]
         public string OrderID { get; set; }
 
+        [DisplayName("需求單主旨")]
+        public string OrderName { get; set; }
+
         [DisplayName("申請人部室")]
         public string ApplyDept { get; set; }
 
@@ -22,6 +25,9 @@ namespace DemandOrder.Models
 
         [DisplayName("預計開始日")]
         public DateTime ExpectStartDate { get; set; }
+
+        [DisplayName("結案日期")]
+        public DateTime? CloseDate { get; set; }
 
         [DisplayName("分類名稱")]
         public string ClassName { get; set; }

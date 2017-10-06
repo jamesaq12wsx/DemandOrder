@@ -1,0 +1,228 @@
+﻿@model List<DemandOrder.Models.SimpleOrderViewModel>
+@using PagedList
+@using PagedList.Mvc
+@*@model IPagedList<DemandOrder.Models.SimpleOrderViewModel>*@
+
+@{
+    ViewBag.Title = "MonthDatas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+            google.charts.load('current', { packages: ['corechart', 'line'] });
+
+            selectDept = '@ViewData["deptName"]';
+
+            if (selectDept == "資訊中心") {
+                google.charts.setOnLoadCallback(drawDeptPieChart);
+            }
+
+            google.charts.setOnLoadCallback(drawTypePie);
+
+
+            function drawDeptPieChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Dept');
+                data.addColumn('number', 'OrderCount');
+
+                @{
+
+                    var group = Model.GroupBy(model => model.ITDept);
+
+                    foreach (var g in group)
+                    {
+                        var deptName = string.Format("{0}", g.First().ITDept.ToString());
+
+                        @:var tempITDept = '@deptName';
+
+                        @:console.log(tempITDept);
+
+                        var count = g.Count();
+
+                        @:tempCount = @count;
+
+                        @:console.log(tempCount);
+
+                        @:data.addRows([[tempITDept, tempCount]]);
+                    }
+                }
+
+                var options = {
+                    title: '需求單各部門比例',
+                    height: 400,
+                    width: 600,
+                    pieHole: 0.4
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('dept_order_percent_pie_chart_div'));
+
+                chart.draw(data, options);
+            }
+
+            function drawTypePie() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', '分類');
+                data.addColumn('number', 'OrderCount');
+
+                @{
+
+                    group = Model.GroupBy(model => model.ClassName);
+
+                    foreach (var g in group)
+                    {
+                        var typeName = "無";
+                        if(g.First().ClassName != null)
+                        {
+                            typeName = string.Format("{0}", g.First().ClassName.ToString());
+                        }
+
+                        @:var tempType = '@typeName';
+
+                        @:console.log(tempType);
+
+                        var count = g.Count();
+
+                        @:tempCount = @count;
+
+                        @:console.log(tempCount);
+
+                        @:data.addRows([[tempType, tempCount]]);
+                    }
+                }
+
+                var options = {
+                    title: '需求單分類',
+                    height: 400,
+                    width: 600,
+                    pieHole: 0.4
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('type_order_percent_pie_chart_div'));
+
+                chart.draw(data, options);
+            }
+
+        </script>
+    }
+
+@*<h2>@string.Format("{0}年{1}月需求單", Model.First().ExpectStartDate.Year, Model.First().ExpectStartDate.Month)</h2>*@
+
+@{ var title = string.Format("{0}年{1}月 {2} {3}", ViewBag.date.Year, ViewBag.date.Month, ViewData["deptName"], ViewData["state"]);}
+
+<h2>@title</h2>
+
+@{ var total = string.Format("總共{0}筆", Model.Count());}
+<h4>@total</h4>
+
+@*orderid 排序*@
+@using (Html.BeginForm())
+{
+    <p>
+        @*@Html.Hidden(model => Model.First().ExpectStartDate, new { @name = "expectStartDate"})*@
+
+        @Html.Hidden("dataMonth", ViewData["dataDate"])
+        @Html.Hidden("state", ViewData["state"])
+        @Html.Hidden("deptName", ViewData["deptName"])
+        @Html.Hidden("data", Model.ToList())
+
+        Order Seqence:
+        @Html.RadioButton("orderSeq", "Seq") Seq
+        @Html.RadioButton("orderSeq", "Dec") Dec
+        <br />
+        Order By:
+        @Html.RadioButton("orderBy", "OrderID") OrderID
+        @Html.RadioButton("orderBy", "Date") Date
+        @Html.RadioButton("orderBy", "OrderName") OrderName <br />
+        Search:
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Order" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().OrderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ApplyDept)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ITDept)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ExpectStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CloseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ClassName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplyDept)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ITDept)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CloseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassName)
+        </td>
+        <td>
+            @Html.ActionLink("Detail", "Detail", new {  orderId=item.OrderID  }) |
+            @Html.ActionLink("Edit", "Edit", new { orderId = item.OrderID })
+        </td>
+    </tr>
+}
+
+</table>
+
+@*<div>
+
+    @{ 
+        string[] deptCode = new string[] { "資訊中心", "數位資訊部", "資訊系統部", "投資資訊部", "壽險資訊部", "資訊規劃部" };
+    }
+
+    @Html.PagedListPager(Model, page => Url.Action("MonthDatas", new { page, fromdate = ViewBag.date, detailDate = ViewBag.date, state = ViewData["state"], dept = Array.IndexOf(deptCode, ViewData["deptName"]) }))
+
+</div>*@
+
+<br />
+
+<div class="container">
+    <div id="dept_order_percent_pie_chart_div" class="col-md-6"></div>
+
+    <br />
+
+    <div id="type_order_percent_pie_chart_div" class="col-md-6"></div>
+
+</div>

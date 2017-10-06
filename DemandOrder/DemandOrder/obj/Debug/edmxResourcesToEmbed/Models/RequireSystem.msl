@@ -1,0 +1,1336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RequireSystemModelStoreContainer" CdmEntityContainer="RequireSystemEntities">
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="RequireSystemModel.dtproperties">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EPMReportingTime">
+      <EntityTypeMapping TypeName="RequireSystemModel.EPMReportingTime">
+        <MappingFragment StoreEntitySet="EPMReportingTime">
+          <ScalarProperty Name="idx" ColumnName="idx" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="TimesheetCode" ColumnName="TimesheetCode" />
+          <ScalarProperty Name="ActualWorkHrs" ColumnName="ActualWorkHrs" />
+          <ScalarProperty Name="PlanWorkHrs" ColumnName="PlanWorkHrs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estimate">
+      <EntityTypeMapping TypeName="RequireSystemModel.Estimate">
+        <MappingFragment StoreEntitySet="Estimate">
+          <ScalarProperty Name="EstimateSN" ColumnName="EstimateSN" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="EstimateUnit" ColumnName="EstimateUnit" />
+          <ScalarProperty Name="EstimateResult" ColumnName="EstimateResult" />
+          <ScalarProperty Name="EstimateDesc" ColumnName="EstimateDesc" />
+          <ScalarProperty Name="EstimateDate" ColumnName="EstimateDate" />
+          <ScalarProperty Name="EstimateEmpID" ColumnName="EstimateEmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEmployee">
+      <EntityTypeMapping TypeName="RequireSystemModel.ITEmployee">
+        <MappingFragment StoreEntitySet="ITEmployee">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpChiName" ColumnName="EmpChiName" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="DeptChiName" ColumnName="DeptChiName" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitChiName" ColumnName="UnitChiName" />
+          <ScalarProperty Name="IsSubContract" ColumnName="IsSubContract" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OfficeDate" ColumnName="OfficeDate" />
+          <ScalarProperty Name="MgrEmpID" ColumnName="MgrEmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LawCompliance">
+      <EntityTypeMapping TypeName="RequireSystemModel.LawCompliance">
+        <MappingFragment StoreEntitySet="LawCompliance">
+          <ScalarProperty Name="LawUserID" ColumnName="LawUserID" />
+          <ScalarProperty Name="LawUserNO" ColumnName="LawUserNO" />
+          <ScalarProperty Name="LawUserName" ColumnName="LawUserName" />
+          <ScalarProperty Name="LawUserDeptID" ColumnName="LawUserDeptID" />
+          <ScalarProperty Name="LawUserDeptName" ColumnName="LawUserDeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSP_CUBE_TIME_BY_DAY">
+      <EntityTypeMapping TypeName="RequireSystemModel.MSP_CUBE_TIME_BY_DAY">
+        <MappingFragment StoreEntitySet="MSP_CUBE_TIME_BY_DAY">
+          <ScalarProperty Name="TIME_ID" ColumnName="TIME_ID" />
+          <ScalarProperty Name="TIME_DATE" ColumnName="TIME_DATE" />
+          <ScalarProperty Name="TIME_DAY" ColumnName="TIME_DAY" />
+          <ScalarProperty Name="TIME_MONTH" ColumnName="TIME_MONTH" />
+          <ScalarProperty Name="TIME_YEAR" ColumnName="TIME_YEAR" />
+          <ScalarProperty Name="TIME_DAY_OF_MONTH" ColumnName="TIME_DAY_OF_MONTH" />
+          <ScalarProperty Name="TIME_WEEK_OF_YEAR" ColumnName="TIME_WEEK_OF_YEAR" />
+          <ScalarProperty Name="TIME_MONTH_OF_YEAR" ColumnName="TIME_MONTH_OF_YEAR" />
+          <ScalarProperty Name="TIME_QTR" ColumnName="TIME_QTR" />
+          <ScalarProperty Name="TIME_WORK_HOUR" ColumnName="TIME_WORK_HOUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalWeeklyReport">
+      <EntityTypeMapping TypeName="RequireSystemModel.PersonalWeeklyReport">
+        <MappingFragment StoreEntitySet="PersonalWeeklyReport">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalWeeklyReportProjectItem">
+      <EntityTypeMapping TypeName="RequireSystemModel.PersonalWeeklyReportProjectItem">
+        <MappingFragment StoreEntitySet="PersonalWeeklyReportProjectItem">
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="ThisWeekProgress" ColumnName="ThisWeekProgress" />
+          <ScalarProperty Name="NextWeekProgress" ColumnName="NextWeekProgress" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalWeeklyReportRequestItem">
+      <EntityTypeMapping TypeName="RequireSystemModel.PersonalWeeklyReportRequestItem">
+        <MappingFragment StoreEntitySet="PersonalWeeklyReportRequestItem">
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="MAPrjID" ColumnName="MAPrjID" />
+          <ScalarProperty Name="ReqWorkStatus" ColumnName="ReqWorkStatus" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project">
+      <EntityTypeMapping TypeName="RequireSystemModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="PrjType" ColumnName="PrjType" />
+          <ScalarProperty Name="PrjName" ColumnName="PrjName" />
+          <ScalarProperty Name="PriDes" ColumnName="PriDes" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="DisplayMAPrjOnUI" ColumnName="DisplayMAPrjOnUI" />
+          <ScalarProperty Name="FinishRate" ColumnName="FinishRate" />
+          <ScalarProperty Name="PlannedManMonth" ColumnName="PlannedManMonth" />
+          <ScalarProperty Name="AccumulationHour" ColumnName="AccumulationHour" />
+          <ScalarProperty Name="TotalDocumentProduct" ColumnName="TotalDocumentProduct" />
+          <ScalarProperty Name="ActualDocumentProduct" ColumnName="ActualDocumentProduct" />
+          <ScalarProperty Name="PlannedBAFunctionPoint" ColumnName="PlannedBAFunctionPoint" />
+          <ScalarProperty Name="PlannedCloseFunctionPoint" ColumnName="PlannedCloseFunctionPoint" />
+          <ScalarProperty Name="PlannedPEPFunctionPoint" ColumnName="PlannedPEPFunctionPoint" />
+          <ScalarProperty Name="IsBuildBaseChange" ColumnName="IsBuildBaseChange" />
+          <ScalarProperty Name="IsInfluenceTime" ColumnName="IsInfluenceTime" />
+          <ScalarProperty Name="IsCommitmentChange" ColumnName="IsCommitmentChange" />
+          <ScalarProperty Name="IsRiskItem" ColumnName="IsRiskItem" />
+          <ScalarProperty Name="IsRiskCountermeasure" ColumnName="IsRiskCountermeasure" />
+          <ScalarProperty Name="IsKeyManOnTime" ColumnName="IsKeyManOnTime" />
+          <ScalarProperty Name="IsMemberTrain" ColumnName="IsMemberTrain" />
+          <ScalarProperty Name="SPI" ColumnName="SPI" />
+          <ScalarProperty Name="PrjStatus" ColumnName="PrjStatus" />
+          <ScalarProperty Name="NewPrjScale" ColumnName="NewPrjScale" />
+          <ScalarProperty Name="IsCMMIPrj" ColumnName="IsCMMIPrj" />
+          <ScalarProperty Name="IsOutsourcing" ColumnName="IsOutsourcing" />
+          <ScalarProperty Name="IsITProject" ColumnName="IsITProject" />
+          <ScalarProperty Name="ImpactValue" ColumnName="ImpactValue" />
+          <ScalarProperty Name="CIPercent" ColumnName="CIPercent" />
+          <ScalarProperty Name="AuditPercent" ColumnName="AuditPercent" />
+          <ScalarProperty Name="CLF1" ColumnName="CLF1" />
+          <ScalarProperty Name="CLF2" ColumnName="CLF2" />
+          <ScalarProperty Name="CLF3" ColumnName="CLF3" />
+          <ScalarProperty Name="PRFNew" ColumnName="PRFNew" />
+          <ScalarProperty Name="PRFDelay" ColumnName="PRFDelay" />
+          <ScalarProperty Name="PRFFinish" ColumnName="PRFFinish" />
+          <ScalarProperty Name="PRFAll" ColumnName="PRFAll" />
+          <ScalarProperty Name="PlannedStartDate" ColumnName="PlannedStartDate" />
+          <ScalarProperty Name="PlannedEndDate" ColumnName="PlannedEndDate" />
+          <ScalarProperty Name="AcceptDate" ColumnName="AcceptDate" />
+          <ScalarProperty Name="PrjCloseDate" ColumnName="PrjCloseDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastModifyUser" ColumnName="LastModifyUser" />
+          <ScalarProperty Name="LastModifyDate" ColumnName="LastModifyDate" />
+          <ScalarProperty Name="OldPrjID" ColumnName="OldPrjID" />
+          <ScalarProperty Name="ThisWeekProgress" ColumnName="ThisWeekProgress" />
+          <ScalarProperty Name="NextWeekProgress" ColumnName="NextWeekProgress" />
+          <ScalarProperty Name="OtherReportDesc" ColumnName="OtherReportDesc" />
+          <ScalarProperty Name="CheckItemDesc" ColumnName="CheckItemDesc" />
+          <ScalarProperty Name="RequireChangeSum" ColumnName="RequireChangeSum" />
+          <ScalarProperty Name="RequireChangePlane" ColumnName="RequireChangePlane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectLog">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjectLog">
+        <MappingFragment StoreEntitySet="ProjectLog">
+          <ScalarProperty Name="ProjectLogSN" ColumnName="ProjectLogSN" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="LogType" ColumnName="LogType" />
+          <ScalarProperty Name="FinishRate" ColumnName="FinishRate" />
+          <ScalarProperty Name="PlannedManMonth" ColumnName="PlannedManMonth" />
+          <ScalarProperty Name="AccumulationHour" ColumnName="AccumulationHour" />
+          <ScalarProperty Name="TotalDocumentProduct" ColumnName="TotalDocumentProduct" />
+          <ScalarProperty Name="ActualDocumentProduct" ColumnName="ActualDocumentProduct" />
+          <ScalarProperty Name="PlannedBAFunctionPoint" ColumnName="PlannedBAFunctionPoint" />
+          <ScalarProperty Name="PlannedCloseFunctionPoint" ColumnName="PlannedCloseFunctionPoint" />
+          <ScalarProperty Name="PlannedPEPFunctionPoint" ColumnName="PlannedPEPFunctionPoint" />
+          <ScalarProperty Name="IsBuildBaseChange" ColumnName="IsBuildBaseChange" />
+          <ScalarProperty Name="IsInfluenceTime" ColumnName="IsInfluenceTime" />
+          <ScalarProperty Name="IsCommitmentChange" ColumnName="IsCommitmentChange" />
+          <ScalarProperty Name="IsRiskItem" ColumnName="IsRiskItem" />
+          <ScalarProperty Name="IsRiskCountermeasure" ColumnName="IsRiskCountermeasure" />
+          <ScalarProperty Name="IsKeyManOnTime" ColumnName="IsKeyManOnTime" />
+          <ScalarProperty Name="IsMemberTrain" ColumnName="IsMemberTrain" />
+          <ScalarProperty Name="SPI" ColumnName="SPI" />
+          <ScalarProperty Name="PrjStatus" ColumnName="PrjStatus" />
+          <ScalarProperty Name="NewPrjScale" ColumnName="NewPrjScale" />
+          <ScalarProperty Name="IsCMMIPrj" ColumnName="IsCMMIPrj" />
+          <ScalarProperty Name="IsOutsourcing" ColumnName="IsOutsourcing" />
+          <ScalarProperty Name="IsITProject" ColumnName="IsITProject" />
+          <ScalarProperty Name="ImpactValue" ColumnName="ImpactValue" />
+          <ScalarProperty Name="CIPercent" ColumnName="CIPercent" />
+          <ScalarProperty Name="AuditPercent" ColumnName="AuditPercent" />
+          <ScalarProperty Name="CLF1" ColumnName="CLF1" />
+          <ScalarProperty Name="CLF2" ColumnName="CLF2" />
+          <ScalarProperty Name="CLF3" ColumnName="CLF3" />
+          <ScalarProperty Name="PRFNew" ColumnName="PRFNew" />
+          <ScalarProperty Name="PRFDelay" ColumnName="PRFDelay" />
+          <ScalarProperty Name="PRFFinish" ColumnName="PRFFinish" />
+          <ScalarProperty Name="PRFAll" ColumnName="PRFAll" />
+          <ScalarProperty Name="PlannedStartDate" ColumnName="PlannedStartDate" />
+          <ScalarProperty Name="PlannedEndDate" ColumnName="PlannedEndDate" />
+          <ScalarProperty Name="AcceptDate" ColumnName="AcceptDate" />
+          <ScalarProperty Name="PrjCloseDate" ColumnName="PrjCloseDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastModifyUser" ColumnName="LastModifyUser" />
+          <ScalarProperty Name="LastModifyDate" ColumnName="LastModifyDate" />
+          <ScalarProperty Name="ThisWeekProgress" ColumnName="ThisWeekProgress" />
+          <ScalarProperty Name="NextWeekProgress" ColumnName="NextWeekProgress" />
+          <ScalarProperty Name="OtherReportDesc" ColumnName="OtherReportDesc" />
+          <ScalarProperty Name="CheckItemDesc" ColumnName="CheckItemDesc" />
+          <ScalarProperty Name="RequireChangeSum" ColumnName="RequireChangeSum" />
+          <ScalarProperty Name="RequireChangePlane" ColumnName="RequireChangePlane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectRiskItem">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjectRiskItem">
+        <MappingFragment StoreEntitySet="ProjectRiskItem">
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="RiskID" ColumnName="RiskID" />
+          <ScalarProperty Name="RiskIssueOwner" ColumnName="RiskIssueOwner" />
+          <ScalarProperty Name="RiskDate" ColumnName="RiskDate" />
+          <ScalarProperty Name="RiskDes" ColumnName="RiskDes" />
+          <ScalarProperty Name="RiskImpact" ColumnName="RiskImpact" />
+          <ScalarProperty Name="RiskProbability" ColumnName="RiskProbability" />
+          <ScalarProperty Name="RiskGrade" ColumnName="RiskGrade" />
+          <ScalarProperty Name="RiskCoverage" ColumnName="RiskCoverage" />
+          <ScalarProperty Name="RiskTime" ColumnName="RiskTime" />
+          <ScalarProperty Name="RiskRule" ColumnName="RiskRule" />
+          <ScalarProperty Name="RiskCountermeasure" ColumnName="RiskCountermeasure" />
+          <ScalarProperty Name="RiskOwner" ColumnName="RiskOwner" />
+          <ScalarProperty Name="RiskStatus" ColumnName="RiskStatus" />
+          <ScalarProperty Name="RiskMemo" ColumnName="RiskMemo" />
+          <ScalarProperty Name="ImpactValue" ColumnName="ImpactValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectRiskItemLog">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjectRiskItemLog">
+        <MappingFragment StoreEntitySet="ProjectRiskItemLog">
+          <ScalarProperty Name="RiskItemLogSN" ColumnName="RiskItemLogSN" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="LogType" ColumnName="LogType" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="RiskID" ColumnName="RiskID" />
+          <ScalarProperty Name="RiskIssueOwner" ColumnName="RiskIssueOwner" />
+          <ScalarProperty Name="RiskDate" ColumnName="RiskDate" />
+          <ScalarProperty Name="RiskDes" ColumnName="RiskDes" />
+          <ScalarProperty Name="RiskImpact" ColumnName="RiskImpact" />
+          <ScalarProperty Name="RiskProbability" ColumnName="RiskProbability" />
+          <ScalarProperty Name="RiskGrade" ColumnName="RiskGrade" />
+          <ScalarProperty Name="RiskCoverage" ColumnName="RiskCoverage" />
+          <ScalarProperty Name="RiskTime" ColumnName="RiskTime" />
+          <ScalarProperty Name="RiskRule" ColumnName="RiskRule" />
+          <ScalarProperty Name="RiskCountermeasure" ColumnName="RiskCountermeasure" />
+          <ScalarProperty Name="RiskOwner" ColumnName="RiskOwner" />
+          <ScalarProperty Name="RiskStatus" ColumnName="RiskStatus" />
+          <ScalarProperty Name="RiskMemo" ColumnName="RiskMemo" />
+          <ScalarProperty Name="ImpactValue" ColumnName="ImpactValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTeamMember">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjectTeamMember">
+        <MappingFragment StoreEntitySet="ProjectTeamMember">
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="TeamMemberRole" ColumnName="TeamMemberRole" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="ThisWeekProgress" ColumnName="ThisWeekProgress" />
+          <ScalarProperty Name="NextWeekProgress" ColumnName="NextWeekProgress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTeamMemberRole">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjectTeamMemberRole">
+        <MappingFragment StoreEntitySet="ProjectTeamMemberRole">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleChiName" ColumnName="RoleChiName" />
+          <ScalarProperty Name="RoleEngName" ColumnName="RoleEngName" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question">
+      <EntityTypeMapping TypeName="RequireSystemModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="QuestionSN" ColumnName="QuestionSN" />
+          <ScalarProperty Name="QuestionDate" ColumnName="QuestionDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ReqCount" ColumnName="ReqCount" />
+          <ScalarProperty Name="AcceptanceCount" ColumnName="AcceptanceCount" />
+          <ScalarProperty Name="MailCount1" ColumnName="MailCount1" />
+          <ScalarProperty Name="MailCount2" ColumnName="MailCount2" />
+          <ScalarProperty Name="ResponseCount" ColumnName="ResponseCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionMember">
+      <EntityTypeMapping TypeName="RequireSystemModel.QuestionMember">
+        <MappingFragment StoreEntitySet="QuestionMember">
+          <ScalarProperty Name="MemberSN" ColumnName="MemberSN" />
+          <ScalarProperty Name="QuestionSN" ColumnName="QuestionSN" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="QuestionStatus" ColumnName="QuestionStatus" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="SendYear" ColumnName="SendYear" />
+          <ScalarProperty Name="SendMonth" ColumnName="SendMonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionResponse">
+      <EntityTypeMapping TypeName="RequireSystemModel.QuestionResponse">
+        <MappingFragment StoreEntitySet="QuestionResponse">
+          <ScalarProperty Name="ResponseSN" ColumnName="ResponseSN" />
+          <ScalarProperty Name="QuestionSN" ColumnName="QuestionSN" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="Choose1" ColumnName="Choose1" />
+          <ScalarProperty Name="Choose2" ColumnName="Choose2" />
+          <ScalarProperty Name="Choose3" ColumnName="Choose3" />
+          <ScalarProperty Name="Choose4" ColumnName="Choose4" />
+          <ScalarProperty Name="OtherDesc" ColumnName="OtherDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="RequireSystemModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="FORMNO" ColumnName="FORMNO" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="FormType" ColumnName="FormType" />
+          <ScalarProperty Name="ApplicantDes" ColumnName="ApplicantDes" />
+          <ScalarProperty Name="ReqType" ColumnName="ReqType" />
+          <ScalarProperty Name="ReqSubject" ColumnName="ReqSubject" />
+          <ScalarProperty Name="ReqDes" ColumnName="ReqDes" />
+          <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+          <ScalarProperty Name="ExpectedFinishedDate" ColumnName="ExpectedFinishedDate" />
+          <ScalarProperty Name="ITDept" ColumnName="ITDept" />
+          <ScalarProperty Name="MAProjectID" ColumnName="MAProjectID" />
+          <ScalarProperty Name="ReqStatus" ColumnName="ReqStatus" />
+          <ScalarProperty Name="ITAccepter" ColumnName="ITAccepter" />
+          <ScalarProperty Name="ITAcceptedDate" ColumnName="ITAcceptedDate" />
+          <ScalarProperty Name="AcceptType" ColumnName="AcceptType" />
+          <ScalarProperty Name="EstimateAccepter" ColumnName="EstimateAccepter" />
+          <ScalarProperty Name="EstimateAcceptDate" ColumnName="EstimateAcceptDate" />
+          <ScalarProperty Name="EstimateType" ColumnName="EstimateType" />
+          <ScalarProperty Name="EstimateDesc" ColumnName="EstimateDesc" />
+          <ScalarProperty Name="FPA" ColumnName="FPA" />
+          <ScalarProperty Name="PlannedStartDate" ColumnName="PlannedStartDate" />
+          <ScalarProperty Name="PlannedEndDate" ColumnName="PlannedEndDate" />
+          <ScalarProperty Name="ActualStartDate" ColumnName="ActualStartDate" />
+          <ScalarProperty Name="ActualEndDate" ColumnName="ActualEndDate" />
+          <ScalarProperty Name="AcceptStartDate" ColumnName="AcceptStartDate" />
+          <ScalarProperty Name="AcceptEndDate" ColumnName="AcceptEndDate" />
+          <ScalarProperty Name="ReqCloseDate" ColumnName="ReqCloseDate" />
+          <ScalarProperty Name="ReqCloseDes" ColumnName="ReqCloseDes" />
+          <ScalarProperty Name="IsWithdraw" ColumnName="IsWithdraw" />
+          <ScalarProperty Name="ReqCancelDate" ColumnName="ReqCancelDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastModifyUser" ColumnName="LastModifyUser" />
+          <ScalarProperty Name="LastModifyDate" ColumnName="LastModifyDate" />
+          <ScalarProperty Name="OldReqID" ColumnName="OldReqID" />
+          <ScalarProperty Name="ITResponse" ColumnName="ITResponse" />
+          <ScalarProperty Name="CheckStatus" ColumnName="CheckStatus" />
+          <ScalarProperty Name="LawUserNO" ColumnName="LawUserNO" />
+          <ScalarProperty Name="IsTDC" ColumnName="IsTDC" />
+          <ScalarProperty Name="IsTDCDes" ColumnName="IsTDCDes" />
+          <ScalarProperty Name="QuestionSendDate" ColumnName="QuestionSendDate" />
+          <ScalarProperty Name="OverDueReplan" ColumnName="OverDueReplan" />
+          <ScalarProperty Name="ProdDate" ColumnName="ProdDate" />
+          <ScalarProperty Name="ProdPlanDate" ColumnName="ProdPlanDate" />
+          <ScalarProperty Name="ReqCmt" ColumnName="ReqCmt" />
+          <ScalarProperty Name="UriStartDate" ColumnName="UriStartDate" />
+          <ScalarProperty Name="UriFinishDate" ColumnName="UriFinishDate" />
+          <ScalarProperty Name="UriDur" ColumnName="UriDur" />
+          <ScalarProperty Name="UriWorkPct" ColumnName="UriWorkPct" />
+          <ScalarProperty Name="ModifiedCount" ColumnName="ModifiedCount" />
+          <ScalarProperty Name="Ominute" ColumnName="Ominute" />
+          <ScalarProperty Name="nTimes" ColumnName="nTimes" />
+          <ScalarProperty Name="ITUnitID" ColumnName="ITUnitID" />
+          <ScalarProperty Name="ITSigned" ColumnName="ITSigned" />
+          <ScalarProperty Name="PIPNo" ColumnName="PIPNo" />
+          <ScalarProperty Name="URScore1" ColumnName="URScore1" />
+          <ScalarProperty Name="URScore2" ColumnName="URScore2" />
+          <ScalarProperty Name="URScore3" ColumnName="URScore3" />
+          <ScalarProperty Name="URScore" ColumnName="URScore" />
+          <ScalarProperty Name="ITScore1" ColumnName="ITScore1" />
+          <ScalarProperty Name="ITScore2" ColumnName="ITScore2" />
+          <ScalarProperty Name="ITScore" ColumnName="ITScore" />
+          <ScalarProperty Name="TTLScore" ColumnName="TTLScore" />
+          <ScalarProperty Name="iGotData" ColumnName="iGotData" />
+          <ScalarProperty Name="PlannedWorkHour" ColumnName="PlannedWorkHour" />
+          <ScalarProperty Name="MARK1" ColumnName="MARK1" />
+          <ScalarProperty Name="MARK2" ColumnName="MARK2" />
+          <ScalarProperty Name="MARK3" ColumnName="MARK3" />
+          <ScalarProperty Name="MARK4" ColumnName="MARK4" />
+          <ScalarProperty Name="MARK5" ColumnName="MARK5" />
+          <ScalarProperty Name="SetupProjectID" ColumnName="SetupProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestAttachment">
+      <EntityTypeMapping TypeName="RequireSystemModel.RequestAttachment">
+        <MappingFragment StoreEntitySet="RequestAttachment">
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="ItemLabel" ColumnName="ItemLabel" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ContentSize" ColumnName="ContentSize" />
+          <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestHandler">
+      <EntityTypeMapping TypeName="RequireSystemModel.RequestHandler">
+        <MappingFragment StoreEntitySet="RequestHandler">
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="IsRequestOwner" ColumnName="IsRequestOwner" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="AcceptDate" ColumnName="AcceptDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+          <ScalarProperty Name="ItemLabel" ColumnName="ItemLabel" />
+          <ScalarProperty Name="WorkPlanDur" ColumnName="WorkPlanDur" />
+          <ScalarProperty Name="WorkPlanStartDate" ColumnName="WorkPlanStartDate" />
+          <ScalarProperty Name="WorkPlanEndDate" ColumnName="WorkPlanEndDate" />
+          <ScalarProperty Name="WorkPlanPct" ColumnName="WorkPlanPct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestType">
+      <EntityTypeMapping TypeName="RequireSystemModel.RequestType">
+        <MappingFragment StoreEntitySet="RequestType">
+          <ScalarProperty Name="TypeSN" ColumnName="TypeSN" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TypeLable" ColumnName="TypeLable" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RiskType">
+      <EntityTypeMapping TypeName="RequireSystemModel.RiskType">
+        <MappingFragment StoreEntitySet="RiskType">
+          <ScalarProperty Name="RiskID" ColumnName="RiskID" />
+          <ScalarProperty Name="RiskType1" ColumnName="RiskType" />
+          <ScalarProperty Name="RiskItem" ColumnName="RiskItem" />
+          <ScalarProperty Name="RiskDes" ColumnName="RiskDes" />
+          <ScalarProperty Name="RiskImpact" ColumnName="RiskImpact" />
+          <ScalarProperty Name="RiskGrade" ColumnName="RiskGrade" />
+          <ScalarProperty Name="RiskProbability" ColumnName="RiskProbability" />
+          <ScalarProperty Name="RiskCoverage" ColumnName="RiskCoverage" />
+          <ScalarProperty Name="RiskTime" ColumnName="RiskTime" />
+          <ScalarProperty Name="RiskRule" ColumnName="RiskRule" />
+          <ScalarProperty Name="RiskCountermeasure" ColumnName="RiskCountermeasure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheetActualItem">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeSheetActualItem">
+        <MappingFragment StoreEntitySet="TimeSheetActualItem">
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ItemDate" ColumnName="ItemDate" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+          <ScalarProperty Name="ItemLabel" ColumnName="ItemLabel" />
+          <ScalarProperty Name="WorkMinute" ColumnName="WorkMinute" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="ItemStatus" ColumnName="ItemStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheetCmt">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeSheetCmt">
+        <MappingFragment StoreEntitySet="TimeSheetCmt">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="ItemCmt" ColumnName="ItemCmt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheetItemType">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeSheetItemType">
+        <MappingFragment StoreEntitySet="TimeSheetItemType">
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+          <ScalarProperty Name="ItemTypeName" ColumnName="ItemTypeName" />
+          <ScalarProperty Name="RateOfUsing" ColumnName="RateOfUsing" />
+          <ScalarProperty Name="NeedPlannedData" ColumnName="NeedPlannedData" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="Applicability" ColumnName="Applicability" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheetPlanItem">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeSheetPlanItem">
+        <MappingFragment StoreEntitySet="TimeSheetPlanItem">
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ItemDate" ColumnName="ItemDate" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+          <ScalarProperty Name="ItemLabel" ColumnName="ItemLabel" />
+          <ScalarProperty Name="WorkMinute" ColumnName="WorkMinute" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDNEED">
+      <EntityTypeMapping TypeName="RequireSystemModel.tmpDNEED">
+        <MappingFragment StoreEntitySet="tmpDNEED">
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="Z_RESN" ColumnName="Z_RESN" />
+          <ScalarProperty Name="Z_RENAME" ColumnName="Z_RENAME" />
+          <ScalarProperty Name="Z_KIND" ColumnName="Z_KIND" />
+          <ScalarProperty Name="Z_CMMI" ColumnName="Z_CMMI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WBSItem">
+      <EntityTypeMapping TypeName="RequireSystemModel.WBSItem">
+        <MappingFragment StoreEntitySet="WBSItem">
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemDes" ColumnName="ItemDes" />
+          <ScalarProperty Name="PlannedStartDate" ColumnName="PlannedStartDate" />
+          <ScalarProperty Name="PlannedEndDate" ColumnName="PlannedEndDate" />
+          <ScalarProperty Name="ActualStartDate" ColumnName="ActualStartDate" />
+          <ScalarProperty Name="ActualEndDate" ColumnName="ActualEndDate" />
+          <ScalarProperty Name="FinishRate" ColumnName="FinishRate" />
+          <ScalarProperty Name="DealPayment" ColumnName="DealPayment" />
+          <ScalarProperty Name="PaidPayment" ColumnName="PaidPayment" />
+          <ScalarProperty Name="DocumentProduct" ColumnName="DocumentProduct" />
+          <ScalarProperty Name="SPI" ColumnName="SPI" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="WBSPath" ColumnName="WBSPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WBSItemLog">
+      <EntityTypeMapping TypeName="RequireSystemModel.WBSItemLog">
+        <MappingFragment StoreEntitySet="WBSItemLog">
+          <ScalarProperty Name="WBSItemLogSN" ColumnName="WBSItemLogSN" />
+          <ScalarProperty Name="ItemSN" ColumnName="ItemSN" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="YearNum" ColumnName="YearNum" />
+          <ScalarProperty Name="WeekNum" ColumnName="WeekNum" />
+          <ScalarProperty Name="LogType" ColumnName="LogType" />
+          <ScalarProperty Name="FinishRate" ColumnName="FinishRate" />
+          <ScalarProperty Name="PaidPayment" ColumnName="PaidPayment" />
+          <ScalarProperty Name="SPI" ColumnName="SPI" />
+          <ScalarProperty Name="ActualStartDate" ColumnName="ActualStartDate" />
+          <ScalarProperty Name="ActualEndDate" ColumnName="ActualEndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantInfo">
+      <EntityTypeMapping TypeName="RequireSystemModel.ApplicantInfo">
+        <MappingFragment StoreEntitySet="ApplicantInfo">
+          <ScalarProperty Name="ApplicantSN" ColumnName="ApplicantSN" />
+          <ScalarProperty Name="PrjID" ColumnName="PrjID" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpChiName" ColumnName="EmpChiName" />
+          <ScalarProperty Name="EmpComPhoneNo" ColumnName="EmpComPhoneNo" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="DeptChiName" ColumnName="DeptChiName" />
+          <ScalarProperty Name="DeptMgrChiName" ColumnName="DeptMgrChiName" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitChiName" ColumnName="UnitChiName" />
+          <ScalarProperty Name="UnitMgrChiName" ColumnName="UnitMgrChiName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplyMember">
+      <EntityTypeMapping TypeName="RequireSystemModel.ApplyMember">
+        <MappingFragment StoreEntitySet="ApplyMember">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpChiName" ColumnName="EmpChiName" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="DeptChiName" ColumnName="DeptChiName" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitChiName" ColumnName="UnitChiName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetDetail">
+      <EntityTypeMapping TypeName="RequireSystemModel.AssetDetail">
+        <MappingFragment StoreEntitySet="AssetDetail">
+          <ScalarProperty Name="ASSET_ID" ColumnName="ASSET_ID" />
+          <ScalarProperty Name="ASSET_NAME" ColumnName="ASSET_NAME" />
+          <ScalarProperty Name="ASSET_CODE" ColumnName="ASSET_CODE" />
+          <ScalarProperty Name="SUBPOENA_DATE" ColumnName="SUBPOENA_DATE" />
+          <ScalarProperty Name="BOOKING_DATE" ColumnName="BOOKING_DATE" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="ASSET_COST" ColumnName="ASSET_COST" />
+          <ScalarProperty Name="ASSET_STATE" ColumnName="ASSET_STATE" />
+          <ScalarProperty Name="ASSET_DEPR" ColumnName="ASSET_DEPR" />
+          <ScalarProperty Name="LAST_UPDATE" ColumnName="LAST_UPDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BudgetDetail">
+      <EntityTypeMapping TypeName="RequireSystemModel.BudgetDetail">
+        <MappingFragment StoreEntitySet="BudgetDetail">
+          <ScalarProperty Name="TBBFM_DEPARTMENT_L_TYPES_ID" ColumnName="TBBFM_DEPARTMENT_L_TYPES_ID" />
+          <ScalarProperty Name="TBBFM_YEAR" ColumnName="TBBFM_YEAR" />
+          <ScalarProperty Name="TBBFM_PROJECT_ID" ColumnName="TBBFM_PROJECT_ID" />
+          <ScalarProperty Name="TBBFM_BUDGETS_ID" ColumnName="TBBFM_BUDGETS_ID" />
+          <ScalarProperty Name="TBBFM_BUDGETS_NAME" ColumnName="TBBFM_BUDGETS_NAME" />
+          <ScalarProperty Name="TBBFM_BUDGETS_ITEM" ColumnName="TBBFM_BUDGETS_ITEM" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="NOTATION" ColumnName="NOTATION" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="AUDIT_AMOUNT" ColumnName="AUDIT_AMOUNT" />
+          <ScalarProperty Name="BAL_DATE" ColumnName="BAL_DATE" />
+          <ScalarProperty Name="AMOUNT_DIFF" ColumnName="AMOUNT_DIFF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BugFormAmort">
+      <EntityTypeMapping TypeName="RequireSystemModel.BugFormAmort">
+        <MappingFragment StoreEntitySet="BugFormAmort">
+          <ScalarProperty Name="BUG_FORM_AMORT_ID" ColumnName="BUG_FORM_AMORT_ID" />
+          <ScalarProperty Name="BUG_FORM_TYPE" ColumnName="BUG_FORM_TYPE" />
+          <ScalarProperty Name="BUG_FORM_NO" ColumnName="BUG_FORM_NO" />
+          <ScalarProperty Name="BUG_FORM_DATE" ColumnName="BUG_FORM_DATE" />
+          <ScalarProperty Name="BUG_FORM_AMORT_DEPT_CODE" ColumnName="BUG_FORM_AMORT_DEPT_CODE" />
+          <ScalarProperty Name="BUG_FORM_AMORT_EMP_NO" ColumnName="BUG_FORM_AMORT_EMP_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostCategory">
+      <EntityTypeMapping TypeName="RequireSystemModel.CostCategory">
+        <MappingFragment StoreEntitySet="CostCategory">
+          <ScalarProperty Name="COST_CAT_ID" ColumnName="COST_CAT_ID" />
+          <ScalarProperty Name="COST_CAT_NAME" ColumnName="COST_CAT_NAME" />
+          <ScalarProperty Name="COST_CAT_TYPE" ColumnName="COST_CAT_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostDept">
+      <EntityTypeMapping TypeName="RequireSystemModel.CostDept">
+        <MappingFragment StoreEntitySet="CostDept">
+          <ScalarProperty Name="COST_YEAR_MONTH" ColumnName="COST_YEAR_MONTH" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="COST_CAT_ID" ColumnName="COST_CAT_ID" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostDetail">
+      <EntityTypeMapping TypeName="RequireSystemModel.CostDetail">
+        <MappingFragment StoreEntitySet="CostDetail">
+          <ScalarProperty Name="CLOSE_DATE" ColumnName="CLOSE_DATE" />
+          <ScalarProperty Name="SUBPOENA_NO" ColumnName="SUBPOENA_NO" />
+          <ScalarProperty Name="SUBPOENA_DATE" ColumnName="SUBPOENA_DATE" />
+          <ScalarProperty Name="DEP_UNIT_CODE1" ColumnName="DEP_UNIT_CODE1" />
+          <ScalarProperty Name="DEP_UNIT_CODE2" ColumnName="DEP_UNIT_CODE2" />
+          <ScalarProperty Name="COST_UNIT_CODE" ColumnName="COST_UNIT_CODE" />
+          <ScalarProperty Name="ACC_CODE" ColumnName="ACC_CODE" />
+          <ScalarProperty Name="ACC_NAME" ColumnName="ACC_NAME" />
+          <ScalarProperty Name="AMT" ColumnName="AMT" />
+          <ScalarProperty Name="ENTRY_TYPE" ColumnName="ENTRY_TYPE" />
+          <ScalarProperty Name="COST_TYPE_CODE" ColumnName="COST_TYPE_CODE" />
+          <ScalarProperty Name="EXP_APPL_NO" ColumnName="EXP_APPL_NO" />
+          <ScalarProperty Name="BUG_ITEM_CODE" ColumnName="BUG_ITEM_CODE" />
+          <ScalarProperty Name="BUG_ITEM_NAME" ColumnName="BUG_ITEM_NAME" />
+          <ScalarProperty Name="LAST_UPDATE" ColumnName="LAST_UPDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostMapping">
+      <EntityTypeMapping TypeName="RequireSystemModel.CostMapping">
+        <MappingFragment StoreEntitySet="CostMapping">
+          <ScalarProperty Name="COST_MAPPING_ID" ColumnName="COST_MAPPING_ID" />
+          <ScalarProperty Name="COST_CAT_ID" ColumnName="COST_CAT_ID" />
+          <ScalarProperty Name="ACC_CODE" ColumnName="ACC_CODE" />
+          <ScalarProperty Name="BUG_CODE" ColumnName="BUG_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataModifyFormAmort">
+      <EntityTypeMapping TypeName="RequireSystemModel.DataModifyFormAmort">
+        <MappingFragment StoreEntitySet="DataModifyFormAmort">
+          <ScalarProperty Name="DATA_MODIFY_FORM_AMOR_ID" ColumnName="DATA_MODIFY_FORM_AMOR_ID" />
+          <ScalarProperty Name="DATA_MODIFY_FORM_NO" ColumnName="DATA_MODIFY_FORM_NO" />
+          <ScalarProperty Name="DATA_MODIFY_FORM_DATE" ColumnName="DATA_MODIFY_FORM_DATE" />
+          <ScalarProperty Name="DATA_MODIFY_FORM_AMORT_DEPT_CODE" ColumnName="DATA_MODIFY_FORM_AMORT_DEPT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeptAmortFlag">
+      <EntityTypeMapping TypeName="RequireSystemModel.DeptAmortFlag">
+        <MappingFragment StoreEntitySet="DeptAmortFlag">
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="IT_FLAG" ColumnName="IT_FLAG" />
+          <ScalarProperty Name="SKY_FLAG" ColumnName="SKY_FLAG" />
+          <ScalarProperty Name="CORE_FLAG" ColumnName="CORE_FLAG" />
+          <ScalarProperty Name="DEPT_STATUS" ColumnName="DEPT_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeptAmortFlag2">
+      <EntityTypeMapping TypeName="RequireSystemModel.DeptAmortFlag2">
+        <MappingFragment StoreEntitySet="DeptAmortFlag2">
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="SKY" ColumnName="SKY" />
+          <ScalarProperty Name="IT" ColumnName="IT" />
+          <ScalarProperty Name="COMS" ColumnName="COMS" />
+          <ScalarProperty Name="INFRA_PCT" ColumnName="INFRA_PCT" />
+          <ScalarProperty Name="CORE_PCT" ColumnName="CORE_PCT" />
+          <ScalarProperty Name="NEW_NCORE_PCT" ColumnName="NEW_NCORE_PCT" />
+          <ScalarProperty Name="OLD_NCORE_PCT" ColumnName="OLD_NCORE_PCT" />
+          <ScalarProperty Name="SKY_PCT" ColumnName="SKY_PCT" />
+          <ScalarProperty Name="IT_PCT" ColumnName="IT_PCT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeptWH">
+      <EntityTypeMapping TypeName="RequireSystemModel.DeptWH">
+        <MappingFragment StoreEntitySet="DeptWH">
+          <ScalarProperty Name="WH_YEAR_MONTH" ColumnName="WH_YEAR_MONTH" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="TIME_CAT2_ID" ColumnName="TIME_CAT2_ID" />
+          <ScalarProperty Name="ACT_WH" ColumnName="ACT_WH" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EPMAssn">
+      <EntityTypeMapping TypeName="RequireSystemModel.EPMAssn">
+        <MappingFragment StoreEntitySet="EPMAssn">
+          <ScalarProperty Name="EPM_ASSN_UID" ColumnName="EPM_ASSN_UID" />
+          <ScalarProperty Name="EPM_ASSN_NAME" ColumnName="EPM_ASSN_NAME" />
+          <ScalarProperty Name="EPM_ASSN_WBS" ColumnName="EPM_ASSN_WBS" />
+          <ScalarProperty Name="EPM_ASSN_START" ColumnName="EPM_ASSN_START" />
+          <ScalarProperty Name="EPM_ASSN_FINISH" ColumnName="EPM_ASSN_FINISH" />
+          <ScalarProperty Name="EPM_TIME_CODE" ColumnName="EPM_TIME_CODE" />
+          <ScalarProperty Name="RES_UID" ColumnName="RES_UID" />
+          <ScalarProperty Name="PROJ_UID" ColumnName="PROJ_UID" />
+          <ScalarProperty Name="PLAN_WH" ColumnName="PLAN_WH" />
+          <ScalarProperty Name="PLAN_WH_BS0" ColumnName="PLAN_WH_BS0" />
+          <ScalarProperty Name="PLAN_WH_BS6" ColumnName="PLAN_WH_BS6" />
+          <ScalarProperty Name="PLAN_START_BS6" ColumnName="PLAN_START_BS6" />
+          <ScalarProperty Name="PLAN_FINISH_BS6" ColumnName="PLAN_FINISH_BS6" />
+          <ScalarProperty Name="ACT_START" ColumnName="ACT_START" />
+          <ScalarProperty Name="ACT_FINISH" ColumnName="ACT_FINISH" />
+          <ScalarProperty Name="DELETED_IN_PROJ" ColumnName="DELETED_IN_PROJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EPMTimesheetWH">
+      <EntityTypeMapping TypeName="RequireSystemModel.EPMTimesheetWH">
+        <MappingFragment StoreEntitySet="EPMTimesheetWH">
+          <ScalarProperty Name="EPM_WORK_HOUR_ID" ColumnName="EPM_WORK_HOUR_ID" />
+          <ScalarProperty Name="WORK_DATE" ColumnName="WORK_DATE" />
+          <ScalarProperty Name="TIMESHEET_RES_ID" ColumnName="TIMESHEET_RES_ID" />
+          <ScalarProperty Name="REQ_ID" ColumnName="REQ_ID" />
+          <ScalarProperty Name="TASK_NAME" ColumnName="TASK_NAME" />
+          <ScalarProperty Name="PLAN_WH" ColumnName="PLAN_WH" />
+          <ScalarProperty Name="PLAN_WH_BS0" ColumnName="PLAN_WH_BS0" />
+          <ScalarProperty Name="PLAN_WH_BS6" ColumnName="PLAN_WH_BS6" />
+          <ScalarProperty Name="ACT_WH" ColumnName="ACT_WH" />
+          <ScalarProperty Name="PROJ_UID" ColumnName="PROJ_UID" />
+          <ScalarProperty Name="SYS_UID" ColumnName="SYS_UID" />
+          <ScalarProperty Name="ASSN_UID" ColumnName="ASSN_UID" />
+          <ScalarProperty Name="RES_UID" ColumnName="RES_UID" />
+          <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
+          <ScalarProperty Name="TIME_CODE_PUBLISHED_ID" ColumnName="TIME_CODE_PUBLISHED_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITOrg">
+      <EntityTypeMapping TypeName="RequireSystemModel.ITOrg">
+        <MappingFragment StoreEntitySet="ITOrg">
+          <ScalarProperty Name="IT_ORG_ID" ColumnName="IT_ORG_ID" />
+          <ScalarProperty Name="ORG_CODE" ColumnName="ORG_CODE" />
+          <ScalarProperty Name="P_ORG_ID" ColumnName="P_ORG_ID" />
+          <ScalarProperty Name="ORG_NAME" ColumnName="ORG_NAME" />
+          <ScalarProperty Name="MGR_RES_ID" ColumnName="MGR_RES_ID" />
+          <ScalarProperty Name="ORG_STATUS" ColumnName="ORG_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITOrgComs">
+      <EntityTypeMapping TypeName="RequireSystemModel.ITOrgComs">
+        <MappingFragment StoreEntitySet="ITOrgComs">
+          <ScalarProperty Name="IT_ORG_ID" ColumnName="IT_ORG_ID" />
+          <ScalarProperty Name="ORG_COMS_DATE" ColumnName="ORG_COMS_DATE" />
+          <ScalarProperty Name="ORG_COMS" ColumnName="ORG_COMS" />
+          <ScalarProperty Name="ORG_IN_JOB" ColumnName="ORG_IN_JOB" />
+          <ScalarProperty Name="ORG_WH_JOB" ColumnName="ORG_WH_JOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITOrgRes">
+      <EntityTypeMapping TypeName="RequireSystemModel.ITOrgRes">
+        <MappingFragment StoreEntitySet="ITOrgRes">
+          <ScalarProperty Name="IT_ORG_RES_ID" ColumnName="IT_ORG_RES_ID" />
+          <ScalarProperty Name="IT_ORG_ID" ColumnName="IT_ORG_ID" />
+          <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="IN_POSTID" ColumnName="IN_POSTID" />
+          <ScalarProperty Name="IN_POSTNAME" ColumnName="IN_POSTNAME" />
+          <ScalarProperty Name="IN_POSTLEVELID" ColumnName="IN_POSTLEVELID" />
+          <ScalarProperty Name="IN_POSTLEVELNAME" ColumnName="IN_POSTLEVELNAME" />
+          <ScalarProperty Name="EMP_AD_ACCT" ColumnName="EMP_AD_ACCT" />
+          <ScalarProperty Name="EMP_STATUS" ColumnName="EMP_STATUS" />
+          <ScalarProperty Name="RES_UID" ColumnName="RES_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITYearBudget">
+      <EntityTypeMapping TypeName="RequireSystemModel.ITYearBudget">
+        <MappingFragment StoreEntitySet="ITYearBudget">
+          <ScalarProperty Name="IT_BUDGET_YEAR" ColumnName="IT_BUDGET_YEAR" />
+          <ScalarProperty Name="IT_BUDGET_AMT" ColumnName="IT_BUDGET_AMT" />
+          <ScalarProperty Name="IT_BUDGET_PCT" ColumnName="IT_BUDGET_PCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITYearCost">
+      <EntityTypeMapping TypeName="RequireSystemModel.ITYearCost">
+        <MappingFragment StoreEntitySet="ITYearCost">
+          <ScalarProperty Name="IT_COST_YEAR_MONTH" ColumnName="IT_COST_YEAR_MONTH" />
+          <ScalarProperty Name="IT_COST_TYPE" ColumnName="IT_COST_TYPE" />
+          <ScalarProperty Name="IT_COST_AMT" ColumnName="IT_COST_AMT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobMapping">
+      <EntityTypeMapping TypeName="RequireSystemModel.JobMapping">
+        <MappingFragment StoreEntitySet="JobMapping">
+          <ScalarProperty Name="JOB_MAPPING_ID" ColumnName="JOB_MAPPING_ID" />
+          <ScalarProperty Name="JOB_NAME" ColumnName="JOB_NAME" />
+          <ScalarProperty Name="JOB_CAT1" ColumnName="JOB_CAT1" />
+          <ScalarProperty Name="JOB_CAT2" ColumnName="JOB_CAT2" />
+          <ScalarProperty Name="JOB_CAT3" ColumnName="JOB_CAT3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobRule">
+      <EntityTypeMapping TypeName="RequireSystemModel.JobRule">
+        <MappingFragment StoreEntitySet="JobRule">
+          <ScalarProperty Name="JOB_RULE_ID" ColumnName="JOB_RULE_ID" />
+          <ScalarProperty Name="JOB_MAPPING_ID" ColumnName="JOB_MAPPING_ID" />
+          <ScalarProperty Name="JOB_TC1" ColumnName="JOB_TC1" />
+          <ScalarProperty Name="JOB_TC2" ColumnName="JOB_TC2" />
+          <ScalarProperty Name="JOB_RULE" ColumnName="JOB_RULE" />
+          <ScalarProperty Name="JOB_RULE_SUM" ColumnName="JOB_RULE_SUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="L1Mgr">
+      <EntityTypeMapping TypeName="RequireSystemModel.L1Mgr">
+        <MappingFragment StoreEntitySet="L1Mgr">
+          <ScalarProperty Name="L1_MGR_ID" ColumnName="L1_MGR_ID" />
+          <ScalarProperty Name="L1_MGR_NAME" ColumnName="L1_MGR_NAME" />
+          <ScalarProperty Name="L1_MGR_AREA" ColumnName="L1_MGR_AREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="L1MgrDeptMapping">
+      <EntityTypeMapping TypeName="RequireSystemModel.L1MgrDeptMapping">
+        <MappingFragment StoreEntitySet="L1MgrDeptMapping">
+          <ScalarProperty Name="L1_MGR_DEPT_MAPPING_ID" ColumnName="L1_MGR_DEPT_MAPPING_ID" />
+          <ScalarProperty Name="L1_MGR_ID" ColumnName="L1_MGR_ID" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaborCostRuleMapping">
+      <EntityTypeMapping TypeName="RequireSystemModel.LaborCostRuleMapping">
+        <MappingFragment StoreEntitySet="LaborCostRuleMapping">
+          <ScalarProperty Name="LABOR_COST_RULE_MAPPING_ID" ColumnName="LABOR_COST_RULE_MAPPING_ID" />
+          <ScalarProperty Name="TIME_CAT2_ID" ColumnName="TIME_CAT2_ID" />
+          <ScalarProperty Name="LABOR_RULE_TYPE" ColumnName="LABOR_RULE_TYPE" />
+          <ScalarProperty Name="LABOR_RULE_YEAR" ColumnName="LABOR_RULE_YEAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberRight">
+      <EntityTypeMapping TypeName="RequireSystemModel.MemberRight">
+        <MappingFragment StoreEntitySet="MemberRight">
+          <ScalarProperty Name="MEMBER_RIGHT_ID" ColumnName="MEMBER_RIGHT_ID" />
+          <ScalarProperty Name="MEMBER_RIGHT_CAT_ORDER" ColumnName="MEMBER_RIGHT_CAT_ORDER" />
+          <ScalarProperty Name="MEMBER_RIGHT_CAT" ColumnName="MEMBER_RIGHT_CAT" />
+          <ScalarProperty Name="MEMBER_RIGHT_FUN" ColumnName="MEMBER_RIGHT_FUN" />
+          <ScalarProperty Name="MEMBER_RIGHT_NAME" ColumnName="MEMBER_RIGHT_NAME" />
+          <ScalarProperty Name="MEMBER_RIGHT_ORDER" ColumnName="MEMBER_RIGHT_ORDER" />
+          <ScalarProperty Name="MEMBER_RIGHT_FLAG" ColumnName="MEMBER_RIGHT_FLAG" />
+          <ScalarProperty Name="MEMBER_RIGHT_URL" ColumnName="MEMBER_RIGHT_URL" />
+          <ScalarProperty Name="MEMBER_RIGHT_IS_MENU" ColumnName="MEMBER_RIGHT_IS_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberRole">
+      <EntityTypeMapping TypeName="RequireSystemModel.MemberRole">
+        <MappingFragment StoreEntitySet="MemberRole">
+          <ScalarProperty Name="MEMBER_ROLE_ID" ColumnName="MEMBER_ROLE_ID" />
+          <ScalarProperty Name="MEMBER_ROLE_NAME" ColumnName="MEMBER_ROLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberRoleRight">
+      <EntityTypeMapping TypeName="RequireSystemModel.MemberRoleRight">
+        <MappingFragment StoreEntitySet="MemberRoleRight">
+          <ScalarProperty Name="MEMBER_ROLE_RIGHT_ID" ColumnName="MEMBER_ROLE_RIGHT_ID" />
+          <ScalarProperty Name="MEMBER_ROLE_ID" ColumnName="MEMBER_ROLE_ID" />
+          <ScalarProperty Name="MEMBER_RIGHT_ID" ColumnName="MEMBER_RIGHT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonthWorkDay">
+      <EntityTypeMapping TypeName="RequireSystemModel.MonthWorkDay">
+        <MappingFragment StoreEntitySet="MonthWorkDay">
+          <ScalarProperty Name="MONTH_WORK_DAY_ID" ColumnName="MONTH_WORK_DAY_ID" />
+          <ScalarProperty Name="WORK_MONTH" ColumnName="WORK_MONTH" />
+          <ScalarProperty Name="WORK_DAY" ColumnName="WORK_DAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizeData">
+      <EntityTypeMapping TypeName="RequireSystemModel.OrganizeData">
+        <MappingFragment StoreEntitySet="OrganizeData">
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="Parent_UnitID" ColumnName="Parent_UnitID" />
+          <ScalarProperty Name="Unit_ShortName" ColumnName="Unit_ShortName" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjAmort">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjAmort">
+        <MappingFragment StoreEntitySet="ProjAmort">
+          <ScalarProperty Name="PROJ_AMORT_ID" ColumnName="PROJ_AMORT_ID" />
+          <ScalarProperty Name="PROJ_UID" ColumnName="PROJ_UID" />
+          <ScalarProperty Name="PROJ_AMORT_DEPT_CODE" ColumnName="PROJ_AMORT_DEPT_CODE" />
+          <ScalarProperty Name="DEPT_AMORT_PCT" ColumnName="DEPT_AMORT_PCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjDetail">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjDetail">
+        <MappingFragment StoreEntitySet="ProjDetail">
+          <ScalarProperty Name="PROJ_UID" ColumnName="PROJ_UID" />
+          <ScalarProperty Name="PROJ_UPDATE_DATE" ColumnName="PROJ_UPDATE_DATE" />
+          <ScalarProperty Name="PROJ_OWNER_ACCT" ColumnName="PROJ_OWNER_ACCT" />
+          <ScalarProperty Name="PROJ_NAME" ColumnName="PROJ_NAME" />
+          <ScalarProperty Name="PROJ_CODE" ColumnName="PROJ_CODE" />
+          <ScalarProperty Name="PROJ_STATUS" ColumnName="PROJ_STATUS" />
+          <ScalarProperty Name="PROJ_START" ColumnName="PROJ_START" />
+          <ScalarProperty Name="PROJ_FINISH" ColumnName="PROJ_FINISH" />
+          <ScalarProperty Name="PROJ_SPI" ColumnName="PROJ_SPI" />
+          <ScalarProperty Name="PROJ_DUR_BS6" ColumnName="PROJ_DUR_BS6" />
+          <ScalarProperty Name="PROJ_DUR_BS0" ColumnName="PROJ_DUR_BS0" />
+          <ScalarProperty Name="PROJ_PLAN_WH_BS6" ColumnName="PROJ_PLAN_WH_BS6" />
+          <ScalarProperty Name="PROJ_PLAN_WH_BS0" ColumnName="PROJ_PLAN_WH_BS0" />
+          <ScalarProperty Name="PROJ_SH_WH_BS0" ColumnName="PROJ_SH_WH_BS0" />
+          <ScalarProperty Name="PROJ_SH_WH_BS6" ColumnName="PROJ_SH_WH_BS6" />
+          <ScalarProperty Name="PROJ_PLAN_PCT_BS0" ColumnName="PROJ_PLAN_PCT_BS0" />
+          <ScalarProperty Name="PROJ_PLAN_PCT_BS6" ColumnName="PROJ_PLAN_PCT_BS6" />
+          <ScalarProperty Name="PROJ_ACT_PCT_BS0" ColumnName="PROJ_ACT_PCT_BS0" />
+          <ScalarProperty Name="PROJ_ACT_PCT_BS6" ColumnName="PROJ_ACT_PCT_BS6" />
+          <ScalarProperty Name="PROJ_YEAR_PLAN_WH_BS6" ColumnName="PROJ_YEAR_PLAN_WH_BS6" />
+          <ScalarProperty Name="PROJ_YEAR_ACT_WH" ColumnName="PROJ_YEAR_ACT_WH" />
+          <ScalarProperty Name="PROJ_STATUS_FLAG" ColumnName="PROJ_STATUS_FLAG" />
+          <ScalarProperty Name="PROJ_PLAN_WH" ColumnName="PROJ_PLAN_WH" />
+          <ScalarProperty Name="PROJ_ACT_WH" ColumnName="PROJ_ACT_WH" />
+          <ScalarProperty Name="PROJ_PLAN_DUR" ColumnName="PROJ_PLAN_DUR" />
+          <ScalarProperty Name="PROJ_ACT_DUR" ColumnName="PROJ_ACT_DUR" />
+          <ScalarProperty Name="PROJ_NOW_STATUS" ColumnName="PROJ_NOW_STATUS" />
+          <ScalarProperty Name="PROJ_OWNER" ColumnName="PROJ_OWNER" />
+          <ScalarProperty Name="PROJ_DEPT" ColumnName="PROJ_DEPT" />
+          <ScalarProperty Name="PROJ_TYPE" ColumnName="PROJ_TYPE" />
+          <ScalarProperty Name="PROJ_KICKOFF_DATE" ColumnName="PROJ_KICKOFF_DATE" />
+          <ScalarProperty Name="PROJ_ONLINE_DATE" ColumnName="PROJ_ONLINE_DATE" />
+          <ScalarProperty Name="PROJ_ACTONLINE_DATE" ColumnName="PROJ_ACTONLINE_DATE" />
+          <ScalarProperty Name="PROJ_MILESTONE_PCT" ColumnName="PROJ_MILESTONE_PCT" />
+          <ScalarProperty Name="PROJ_SPI_PRE" ColumnName="PROJ_SPI_PRE" />
+          <ScalarProperty Name="PROJ_PMO_STATUS" ColumnName="PROJ_PMO_STATUS" />
+          <ScalarProperty Name="PROJ_PMO_RES" ColumnName="PROJ_PMO_RES" />
+          <ScalarProperty Name="PROJ_PMO_RPT" ColumnName="PROJ_PMO_RPT" />
+          <ScalarProperty Name="PROJ_FP" ColumnName="PROJ_FP" />
+          <ScalarProperty Name="PROJ_CONT_NAME" ColumnName="PROJ_CONT_NAME" />
+          <ScalarProperty Name="PROJ_BUDGET" ColumnName="PROJ_BUDGET" />
+          <ScalarProperty Name="PROJ_CONT_AMT" ColumnName="PROJ_CONT_AMT" />
+          <ScalarProperty Name="PROJ_CONT_AMT_PAY" ColumnName="PROJ_CONT_AMT_PAY" />
+          <ScalarProperty Name="PROJ_CONT_AMT_PAID" ColumnName="PROJ_CONT_AMT_PAID" />
+          <ScalarProperty Name="PROJ_PRO_DEPT" ColumnName="PROJ_PRO_DEPT" />
+          <ScalarProperty Name="PROJ_PRO_USER" ColumnName="PROJ_PRO_USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjDetailExcel">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjDetailExcel">
+        <MappingFragment StoreEntitySet="ProjDetailExcel">
+          <ScalarProperty Name="PROJ_UPDATE_DATE" ColumnName="PROJ_UPDATE_DATE" />
+          <ScalarProperty Name="PROJ_NAME" ColumnName="PROJ_NAME" />
+          <ScalarProperty Name="PROJ_CODE" ColumnName="PROJ_CODE" />
+          <ScalarProperty Name="PROJ_SPI" ColumnName="PROJ_SPI" />
+          <ScalarProperty Name="PROJ_STATUS_FLAG" ColumnName="PROJ_STATUS_FLAG" />
+          <ScalarProperty Name="PROJ_PLAN_WH" ColumnName="PROJ_PLAN_WH" />
+          <ScalarProperty Name="PROJ_ACT_WH" ColumnName="PROJ_ACT_WH" />
+          <ScalarProperty Name="PROJ_PLAN_DUR" ColumnName="PROJ_PLAN_DUR" />
+          <ScalarProperty Name="PROJ_ACT_DUR" ColumnName="PROJ_ACT_DUR" />
+          <ScalarProperty Name="PROJ_NOW_STATUS" ColumnName="PROJ_NOW_STATUS" />
+          <ScalarProperty Name="PROJ_OWNER" ColumnName="PROJ_OWNER" />
+          <ScalarProperty Name="PROJ_DEPT" ColumnName="PROJ_DEPT" />
+          <ScalarProperty Name="PROJ_TYPE" ColumnName="PROJ_TYPE" />
+          <ScalarProperty Name="PROJ_KICKOFF_DATE" ColumnName="PROJ_KICKOFF_DATE" />
+          <ScalarProperty Name="PROJ_ONLINE_DATE" ColumnName="PROJ_ONLINE_DATE" />
+          <ScalarProperty Name="PROJ_ACTONLINE_DATE" ColumnName="PROJ_ACTONLINE_DATE" />
+          <ScalarProperty Name="PROJ_MILESTONE_PCT" ColumnName="PROJ_MILESTONE_PCT" />
+          <ScalarProperty Name="PROJ_SPI_PRE" ColumnName="PROJ_SPI_PRE" />
+          <ScalarProperty Name="PROJ_PMO_STATUS" ColumnName="PROJ_PMO_STATUS" />
+          <ScalarProperty Name="PROJ_PMO_RES" ColumnName="PROJ_PMO_RES" />
+          <ScalarProperty Name="PROJ_PMO_RPT" ColumnName="PROJ_PMO_RPT" />
+          <ScalarProperty Name="PROJ_FP" ColumnName="PROJ_FP" />
+          <ScalarProperty Name="PROJ_CONT_NAME" ColumnName="PROJ_CONT_NAME" />
+          <ScalarProperty Name="PROJ_BUDGET" ColumnName="PROJ_BUDGET" />
+          <ScalarProperty Name="PROJ_CONT_AMT" ColumnName="PROJ_CONT_AMT" />
+          <ScalarProperty Name="PROJ_CONT_AMT_PAY" ColumnName="PROJ_CONT_AMT_PAY" />
+          <ScalarProperty Name="PROJ_CONT_AMT_PAID" ColumnName="PROJ_CONT_AMT_PAID" />
+          <ScalarProperty Name="PROJ_PCT" ColumnName="PROJ_PCT" />
+          <ScalarProperty Name="PROJ_ACT_PCT" ColumnName="PROJ_ACT_PCT" />
+          <ScalarProperty Name="PROJ_ACT_WH_PCT" ColumnName="PROJ_ACT_WH_PCT" />
+          <ScalarProperty Name="PROJ_PRO_DEPT" ColumnName="PROJ_PRO_DEPT" />
+          <ScalarProperty Name="PROJ_PRO_USER" ColumnName="PROJ_PRO_USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjSysMapping">
+      <EntityTypeMapping TypeName="RequireSystemModel.ProjSysMapping">
+        <MappingFragment StoreEntitySet="ProjSysMapping">
+          <ScalarProperty Name="PROJ_SYS_MAPPING_ID" ColumnName="PROJ_SYS_MAPPING_ID" />
+          <ScalarProperty Name="PROJ_UID" ColumnName="PROJ_UID" />
+          <ScalarProperty Name="SYS_UID" ColumnName="SYS_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqAssn">
+      <EntityTypeMapping TypeName="RequireSystemModel.ReqAssn">
+        <MappingFragment StoreEntitySet="ReqAssn">
+          <ScalarProperty Name="REQ_ASSN_ID" ColumnName="REQ_ASSN_ID" />
+          <ScalarProperty Name="REQ_DETAIL_ID" ColumnName="REQ_DETAIL_ID" />
+          <ScalarProperty Name="REQ_ASSN_START" ColumnName="REQ_ASSN_START" />
+          <ScalarProperty Name="REQ_ASSN_FINISH" ColumnName="REQ_ASSN_FINISH" />
+          <ScalarProperty Name="REQ_ASSN_DUR" ColumnName="REQ_ASSN_DUR" />
+          <ScalarProperty Name="REQ_TIME_CODE" ColumnName="REQ_TIME_CODE" />
+          <ScalarProperty Name="PLAN_WH" ColumnName="PLAN_WH" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqDept">
+      <EntityTypeMapping TypeName="RequireSystemModel.ReqDept">
+        <MappingFragment StoreEntitySet="ReqDept">
+          <ScalarProperty Name="REQ_ID" ColumnName="REQ_ID" />
+          <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqDetail">
+      <EntityTypeMapping TypeName="RequireSystemModel.ReqDetail">
+        <MappingFragment StoreEntitySet="ReqDetail">
+          <ScalarProperty Name="REQ_DETAIL_ID" ColumnName="REQ_DETAIL_ID" />
+          <ScalarProperty Name="REQ_ID" ColumnName="REQ_ID" />
+          <ScalarProperty Name="REQ_DEPT_CODE" ColumnName="REQ_DEPT_CODE" />
+          <ScalarProperty Name="REQ_SEC_CODE" ColumnName="REQ_SEC_CODE" />
+          <ScalarProperty Name="FORM_TYPE" ColumnName="FORM_TYPE" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="REQ_WORK_NAME" ColumnName="REQ_WORK_NAME" />
+          <ScalarProperty Name="REQ_APPLY_DATE" ColumnName="REQ_APPLY_DATE" />
+          <ScalarProperty Name="REQ_CLOSE_DATE" ColumnName="REQ_CLOSE_DATE" />
+          <ScalarProperty Name="LINE_CODE" ColumnName="LINE_CODE" />
+          <ScalarProperty Name="LINE_NAME" ColumnName="LINE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqTimesheetWH">
+      <EntityTypeMapping TypeName="RequireSystemModel.ReqTimesheetWH">
+        <MappingFragment StoreEntitySet="ReqTimesheetWH">
+          <ScalarProperty Name="REQ_WORK_HOUR_ID" ColumnName="REQ_WORK_HOUR_ID" />
+          <ScalarProperty Name="WORK_DATE" ColumnName="WORK_DATE" />
+          <ScalarProperty Name="TIMESHEET_RES_ID" ColumnName="TIMESHEET_RES_ID" />
+          <ScalarProperty Name="REQ_ID" ColumnName="REQ_ID" />
+          <ScalarProperty Name="REQ_WORK_NAME" ColumnName="REQ_WORK_NAME" />
+          <ScalarProperty Name="PLAN_WH_BS0" ColumnName="PLAN_WH_BS0" />
+          <ScalarProperty Name="ACT_WH" ColumnName="ACT_WH" />
+          <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
+          <ScalarProperty Name="TIME_CODE_PUBLISHED_ID" ColumnName="TIME_CODE_PUBLISHED_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Serial">
+      <EntityTypeMapping TypeName="RequireSystemModel.Serial">
+        <MappingFragment StoreEntitySet="Serial">
+          <ScalarProperty Name="SerialSN" ColumnName="SerialSN" />
+          <ScalarProperty Name="SerialClass" ColumnName="SerialClass" />
+          <ScalarProperty Name="SerialID" ColumnName="SerialID" />
+          <ScalarProperty Name="NowSerialID" ColumnName="NowSerialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysStatus">
+      <EntityTypeMapping TypeName="RequireSystemModel.SysStatus">
+        <MappingFragment StoreEntitySet="SysStatus">
+          <ScalarProperty Name="SYS_STATUS_ID" ColumnName="SYS_STATUS_ID" />
+          <ScalarProperty Name="SYS_STATUS_CAT" ColumnName="SYS_STATUS_CAT" />
+          <ScalarProperty Name="SYS_STATUS_MSG" ColumnName="SYS_STATUS_MSG" />
+          <ScalarProperty Name="SYS_STATUS_TYPE" ColumnName="SYS_STATUS_TYPE" />
+          <ScalarProperty Name="SYS_DATA_DATE" ColumnName="SYS_DATA_DATE" />
+          <ScalarProperty Name="SYS_STATUS_DATE" ColumnName="SYS_STATUS_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemMember">
+      <EntityTypeMapping TypeName="RequireSystemModel.SystemMember">
+        <MappingFragment StoreEntitySet="SystemMember">
+          <ScalarProperty Name="SYS_MEMBER_ID" ColumnName="SYS_MEMBER_ID" />
+          <ScalarProperty Name="MEMBER_ROLE_ID" ColumnName="MEMBER_ROLE_ID" />
+          <ScalarProperty Name="EMP_AD_ACCT" ColumnName="EMP_AD_ACCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCat1">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeCat1">
+        <MappingFragment StoreEntitySet="TimeCat1">
+          <ScalarProperty Name="TIME_CAT1_ID" ColumnName="TIME_CAT1_ID" />
+          <ScalarProperty Name="TIME_CAT1_NAME" ColumnName="TIME_CAT1_NAME" />
+          <ScalarProperty Name="TIME_CAT1_ORDER" ColumnName="TIME_CAT1_ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCat2">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeCat2">
+        <MappingFragment StoreEntitySet="TimeCat2">
+          <ScalarProperty Name="TIME_CAT2_ID" ColumnName="TIME_CAT2_ID" />
+          <ScalarProperty Name="TIME_CAT1_ID" ColumnName="TIME_CAT1_ID" />
+          <ScalarProperty Name="TIME_CAT2_NAME" ColumnName="TIME_CAT2_NAME" />
+          <ScalarProperty Name="TIME_CAT2_PRD" ColumnName="TIME_CAT2_PRD" />
+          <ScalarProperty Name="TIME_CAT2_ORDER" ColumnName="TIME_CAT2_ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCat3">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeCat3">
+        <MappingFragment StoreEntitySet="TimeCat3">
+          <ScalarProperty Name="TIME_CAT3_ID" ColumnName="TIME_CAT3_ID" />
+          <ScalarProperty Name="TIME_CAT2_ID" ColumnName="TIME_CAT2_ID" />
+          <ScalarProperty Name="TIME_CAT3_NAME" ColumnName="TIME_CAT3_NAME" />
+          <ScalarProperty Name="TIME_CAT3_ORDER" ColumnName="TIME_CAT3_ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCode">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeCode">
+        <MappingFragment StoreEntitySet="TimeCode">
+          <ScalarProperty Name="TIME_CODE_ID" ColumnName="TIME_CODE_ID" />
+          <ScalarProperty Name="TIME_CAT3_ID" ColumnName="TIME_CAT3_ID" />
+          <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
+          <ScalarProperty Name="TIME_CODE_NAME" ColumnName="TIME_CODE_NAME" />
+          <ScalarProperty Name="TIME_CODE_DESC" ColumnName="TIME_CODE_DESC" />
+          <ScalarProperty Name="TIME_CODE_DESC2" ColumnName="TIME_CODE_DESC2" />
+          <ScalarProperty Name="TIME_CODE_ORDER" ColumnName="TIME_CODE_ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCodePublish">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimeCodePublish">
+        <MappingFragment StoreEntitySet="TimeCodePublish">
+          <ScalarProperty Name="TIME_CODE_PUBLISH_ID" ColumnName="TIME_CODE_PUBLISH_ID" />
+          <ScalarProperty Name="TIME_CODE_YEAR" ColumnName="TIME_CODE_YEAR" />
+          <ScalarProperty Name="TIME_CAT1_ID" ColumnName="TIME_CAT1_ID" />
+          <ScalarProperty Name="TIME_CAT1_NAME" ColumnName="TIME_CAT1_NAME" />
+          <ScalarProperty Name="TIME_CAT1_ORDER" ColumnName="TIME_CAT1_ORDER" />
+          <ScalarProperty Name="TIME_CAT2_NAME" ColumnName="TIME_CAT2_NAME" />
+          <ScalarProperty Name="TIME_CAT2_ID" ColumnName="TIME_CAT2_ID" />
+          <ScalarProperty Name="TIME_CAT2_PRD" ColumnName="TIME_CAT2_PRD" />
+          <ScalarProperty Name="TIME_CAT2_ORDER" ColumnName="TIME_CAT2_ORDER" />
+          <ScalarProperty Name="TIME_CAT3_ID" ColumnName="TIME_CAT3_ID" />
+          <ScalarProperty Name="TIME_CAT3_NAME" ColumnName="TIME_CAT3_NAME" />
+          <ScalarProperty Name="TIME_CAT3_ORDER" ColumnName="TIME_CAT3_ORDER" />
+          <ScalarProperty Name="TIME_CODE_ID" ColumnName="TIME_CODE_ID" />
+          <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
+          <ScalarProperty Name="TIME_CODE_NAME" ColumnName="TIME_CODE_NAME" />
+          <ScalarProperty Name="TIME_CODE_DESC1" ColumnName="TIME_CODE_DESC1" />
+          <ScalarProperty Name="TIME_CODE_DESC2" ColumnName="TIME_CODE_DESC2" />
+          <ScalarProperty Name="TIME_CODE_ORDER" ColumnName="TIME_CODE_ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimesheetRes">
+      <EntityTypeMapping TypeName="RequireSystemModel.TimesheetRes">
+        <MappingFragment StoreEntitySet="TimesheetRes">
+          <ScalarProperty Name="TIMESHEET_RES_ID" ColumnName="TIMESHEET_RES_ID" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="SECTION_NAME" ColumnName="SECTION_NAME" />
+          <ScalarProperty Name="SECTION_CODE" ColumnName="SECTION_CODE" />
+          <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
+          <ScalarProperty Name="EMP_AD_ACCT" ColumnName="EMP_AD_ACCT" />
+          <ScalarProperty Name="EMP_DATE" ColumnName="EMP_DATE" />
+          <ScalarProperty Name="RES_UID" ColumnName="RES_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webloginb">
+      <EntityTypeMapping TypeName="RequireSystemModel.webloginb">
+        <MappingFragment StoreEntitySet="webloginb">
+          <ScalarProperty Name="Col001" ColumnName="Col001" />
+          <ScalarProperty Name="Col002" ColumnName="Col002" />
+          <ScalarProperty Name="Col003" ColumnName="Col003" />
+          <ScalarProperty Name="Col004" ColumnName="Col004" />
+          <ScalarProperty Name="Col005" ColumnName="Col005" />
+          <ScalarProperty Name="Col006" ColumnName="Col006" />
+          <ScalarProperty Name="Col007" ColumnName="Col007" />
+          <ScalarProperty Name="Col008" ColumnName="Col008" />
+          <ScalarProperty Name="Col009" ColumnName="Col009" />
+          <ScalarProperty Name="Col010" ColumnName="Col010" />
+          <ScalarProperty Name="Col011" ColumnName="Col011" />
+          <ScalarProperty Name="Col012" ColumnName="Col012" />
+          <ScalarProperty Name="Col013" ColumnName="Col013" />
+          <ScalarProperty Name="Col014" ColumnName="Col014" />
+          <ScalarProperty Name="Col015" ColumnName="Col015" />
+          <ScalarProperty Name="Col016" ColumnName="Col016" />
+          <ScalarProperty Name="Col017" ColumnName="Col017" />
+          <ScalarProperty Name="Col018" ColumnName="Col018" />
+          <ScalarProperty Name="Col019" ColumnName="Col019" />
+          <ScalarProperty Name="Col020" ColumnName="Col020" />
+          <ScalarProperty Name="Col021" ColumnName="Col021" />
+          <ScalarProperty Name="Col022" ColumnName="Col022" />
+          <ScalarProperty Name="Col023" ColumnName="Col023" />
+          <ScalarProperty Name="Col024" ColumnName="Col024" />
+          <ScalarProperty Name="Col025" ColumnName="Col025" />
+          <ScalarProperty Name="Col026" ColumnName="Col026" />
+          <ScalarProperty Name="Col027" ColumnName="Col027" />
+          <ScalarProperty Name="Col028" ColumnName="Col028" />
+          <ScalarProperty Name="Col029" ColumnName="Col029" />
+          <ScalarProperty Name="Col030" ColumnName="Col030" />
+          <ScalarProperty Name="Col031" ColumnName="Col031" />
+          <ScalarProperty Name="Col032" ColumnName="Col032" />
+          <ScalarProperty Name="Col033" ColumnName="Col033" />
+          <ScalarProperty Name="Col034" ColumnName="Col034" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YearPlanProj">
+      <EntityTypeMapping TypeName="RequireSystemModel.YearPlanProj">
+        <MappingFragment StoreEntitySet="YearPlanProj">
+          <ScalarProperty Name="YEAR_PLAN_PROJ_ID" ColumnName="YEAR_PLAN_PROJ_ID" />
+          <ScalarProperty Name="PLAN_YEAR" ColumnName="PLAN_YEAR" />
+          <ScalarProperty Name="IT_ORG_ID" ColumnName="IT_ORG_ID" />
+          <ScalarProperty Name="PROJ_NAME" ColumnName="PROJ_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YearPlanProjRes">
+      <EntityTypeMapping TypeName="RequireSystemModel.YearPlanProjRes">
+        <MappingFragment StoreEntitySet="YearPlanProjRes">
+          <ScalarProperty Name="YEAR_PLAN_PROJ_RES_ID" ColumnName="YEAR_PLAN_PROJ_RES_ID" />
+          <ScalarProperty Name="PLAN_YEAR_MONTH" ColumnName="PLAN_YEAR_MONTH" />
+          <ScalarProperty Name="IT_ORG_ID" ColumnName="IT_ORG_ID" />
+          <ScalarProperty Name="YEAR_PLAN_RES_ID" ColumnName="YEAR_PLAN_RES_ID" />
+          <ScalarProperty Name="YEAR_PLAN_PROJ_ID" ColumnName="YEAR_PLAN_PROJ_ID" />
+          <ScalarProperty Name="RES_PLAN_PCT" ColumnName="RES_PLAN_PCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YearPlanRes">
+      <EntityTypeMapping TypeName="RequireSystemModel.YearPlanRes">
+        <MappingFragment StoreEntitySet="YearPlanRes">
+          <ScalarProperty Name="YEAR_PLAN_RES_ID" ColumnName="YEAR_PLAN_RES_ID" />
+          <ScalarProperty Name="PLAN_YEAR" ColumnName="PLAN_YEAR" />
+          <ScalarProperty Name="IT_ORG_ID" ColumnName="IT_ORG_ID" />
+          <ScalarProperty Name="RES_NAME" ColumnName="RES_NAME" />
+          <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

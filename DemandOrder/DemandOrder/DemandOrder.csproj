@@ -49,13 +49,27 @@
     <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -145,28 +159,314 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DateValidController.cs" />
     <Compile Include="Controllers\DemandOrderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApplicantInfo.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplyMember.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssetDetail.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BudgetDetail.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BugFormAmort.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CostCategory.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CostDept.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CostDetail.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CostMapping.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModifyFormAmort.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeptAmortFlag.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeptAmortFlag2.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeptWH.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dtproperties.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EPMAssn.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EPMReportingTime.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EPMTimesheetWH.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estimate.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEmployee.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITOrg.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITOrgComs.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITOrgRes.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITYearBudget.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITYearCost.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobMapping.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobRule.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\L1Mgr.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\L1MgrDeptMapping.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LaborCostRuleMapping.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LawCompliance.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MemberRight.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MemberRole.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MemberRoleRight.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonthWorkDay.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSP_CUBE_TIME_BY_DAY.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderLibrary.cs" />
     <Compile Include="Models\OrdersCountViewModel.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\OrganizeData.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonalWeeklyReport.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonalWeeklyReportProjectItem.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonalWeeklyReportRequestItem.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjAmort.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjDetail.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjDetailExcel.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectLog.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectRiskItem.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectRiskItemLog.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectTeamMember.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectTeamMemberRole.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjSysMapping.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuestionMember.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuestionResponse.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReqAssn.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReqDept.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReqDetail.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReqTimesheetWH.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Request.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestAttachment.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestHandler.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestType.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequireSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequireSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequireSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequireSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequireSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RiskType.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Serial.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SimpleOrderViewModel.cs" />
+    <Compile Include="Models\StateCountViewModel.cs" />
+    <Compile Include="Models\SysStatus.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SystemMember.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeCat1.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeCat2.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeCat3.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeCode.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeCodePublish.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeSheetActualItem.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeSheetCmt.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeSheetItemType.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeSheetPlanItem.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimesheetRes.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tmpDNEED.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WBSItem.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WBSItemLog.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webloginb.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YearPlanProj.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YearPlanProjRes.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YearPlanRes.cs">
+      <DependentUpon>RequireSystem.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DBService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\freelancer.css" />
+    <Content Include="Content\freelancer.min.css" />
+    <Content Include="Content\myStyleSheet.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="js\contact_me.js" />
+    <Content Include="js\freelancer.js" />
+    <Content Include="js\freelancer.min.js" />
+    <Content Include="js\jqBootstrapValidation.js" />
+    <Content Include="Models\RequireSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RequireSystem.Context.cs</LastGenOutput>
+      <DependentUpon>RequireSystem.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RequireSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RequireSystem.edmx</DependentUpon>
+      <LastGenOutput>RequireSystem.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\RequireSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RequireSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RequireSystem.edmx.diagram">
+      <DependentUpon>RequireSystem.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -179,6 +479,24 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\popper\popper.js" />
+    <Content Include="vendor\popper\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -196,9 +514,48 @@
     <Content Include="Views\DemandOrder\Index.cshtml" />
     <Content Include="Views\DemandOrder\_Index.cshtml" />
     <Content Include="Views\DemandOrder\DrawPic.cshtml" />
+    <Content Include="Views\DemandOrder\MakeChart.cshtml" />
+    <Content Include="Views\DemandOrder\MonthDatas.cshtml" />
+    <Content Include="Views\DemandOrder\Detail.cshtml" />
+    <Content Include="Views\DemandOrder\Edit.cshtml" />
+    <Content Include="Views\DemandOrder\Index2.cshtml" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="vendor\font-awesome\less\animated.less" />
+    <Content Include="vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="vendor\font-awesome\less\core.less" />
+    <Content Include="vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="vendor\font-awesome\less\icons.less" />
+    <Content Include="vendor\font-awesome\less\larger.less" />
+    <Content Include="vendor\font-awesome\less\list.less" />
+    <Content Include="vendor\font-awesome\less\mixins.less" />
+    <Content Include="vendor\font-awesome\less\path.less" />
+    <Content Include="vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="vendor\font-awesome\less\stacked.less" />
+    <Content Include="vendor\font-awesome\less\variables.less" />
+    <Content Include="vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="vendor\font-awesome\scss\_core.scss" />
+    <Content Include="vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="vendor\font-awesome\scss\_list.scss" />
+    <Content Include="vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="vendor\font-awesome\scss\_path.scss" />
+    <Content Include="vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="vendor\font-awesome\scss\_variables.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DateValid\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -212,6 +569,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

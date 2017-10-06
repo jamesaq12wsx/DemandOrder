@@ -1,0 +1,248 @@
+﻿@model DemandOrder.Models.OrdersCountViewModel
+
+@{
+    ViewBag.Title = "需求單申請部室";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        google.charts.load('current', { packages: ['corechart', 'line'] });
+
+        console.log(@Model.Orders.Where(model => model.ExpectStartDate.Date > Model.SearchDate.Date || (model.ExpectStartDate.Year == Model.SearchDate.Year && model.ExpectStartDate.Month == Model.SearchDate.Month)).Count() != 0);
+
+        if (@Model.Orders.Where(model => model.ExpectStartDate.Date > Model.SearchDate.Date || (model.ExpectStartDate.Year == Model.SearchDate.Year && model.ExpectStartDate.Month == Model.SearchDate.Month)).Count() != 0) {
+
+            google.charts.setOnLoadCallback(drawPieChart);
+
+            google.charts.setOnLoadCallback(drawFinishPercentBarChart);
+
+        }
+        
+
+        function drawPieChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Dept');
+            data.addColumn('number', 'UnfinishOrderCount');
+
+            @{
+                var applyDept = Model.Orders.Where(model => model.ExpectStartDate.Date > Model.SearchDate.Date || (model.ExpectStartDate.Year == Model.SearchDate.Year && model.ExpectStartDate.Month == Model.SearchDate.Month)).GroupBy(model => model.ApplyDept);
+
+                foreach(var g in applyDept)
+                {
+                    @:tempApply = '@g.First().ApplyDept';
+
+                    @:console.log(tempApply);
+
+                    @:tempUnfinish = @g.Where(model => model.State != "結案").Count()>0?@g.Where(model => model.State != "結案").Count():0;
+
+                    @:data.addRows([[tempApply, tempUnfinish]]);
+                }
+            }
+
+            var options = {
+                title: '各申請部門未完成比例',
+                height: 400,
+                width: 700,
+                pieHole: 0.4
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('dept_order_unfinishpercent_pie_chart_div'));
+
+            chart.draw(data, options);
+        }
+
+
+        function drawFinishPercentBarChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Dept');
+            data.addColumn('number', '完成百分比');
+
+            @{
+                applyDept = Model.Orders.Where(model => model.ExpectStartDate.Date > Model.SearchDate.Date || (model.ExpectStartDate.Year == Model.SearchDate.Year && model.ExpectStartDate.Month == Model.SearchDate.Month)).GroupBy(model => model.ApplyDept);
+
+                foreach(var g in applyDept)
+                {
+                    @:tempApplyDept = '@g.First().ApplyDept';
+
+                    @:console.log('部門名稱:' + tempApplyDept);
+
+                    @:finishPercent = @g.Where(model => model.State != "結案").Count() * 100 / @g.Count();
+
+                    @:data.addRows([[tempApplyDept, finishPercent]]);
+                }
+            }
+
+            var options = {
+                title: '各申請部門需求單完成百分比',
+                height: 400,
+                width: 700,
+                hAxis: {
+                    title: 'Percent',
+                    minValue: 0,
+                    maxValue: 100
+                },
+                vAxis: {
+                    title: 'Dept'
+                },
+                colors: ['#ff906b']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('dept_order_finishpercent_bar_chart_div'));
+
+            chart.draw(data, options);
+        }
+
+    </script>
+
+    }
+
+<h2>需求單申請部室</h2>
+
+@*order 時間*@
+<div class="row">
+
+    @using (Html.BeginForm())
+    {
+        <div class="col-md-4 row">
+
+            @Html.LabelFor(model => model.SearchDate)
+
+            @Html.EditorFor(model => model.SearchDate, "{0:yyyy-MM-dd}", new { htmlAttributes = new { @id = "datetimepicker3", @class = "form-control", @Value = Model.SearchDate.ToString("yyyy-MM-dd"), @Max = DateTime.Now.AddMonths(-1).ToString("yyyy/MM/dd") } })
+
+            @*@Html.TextBoxFor(model => model.SearchDate, "{0:yyyy/MM}", new { @id = "datetimepicker4", @class = "dateInput", @placeholder = "plz input date", @Value = DateTime.Now.AddYears(-1).ToString("yyyy/MM") })*@
+
+            @* 無法work remote valid *@
+            @*@Html.ValidationMessageFor(model => model.SearchDate,"日期必須在這個月以前")*@
+
+            <input type="submit" value="確認" class="form-control" />
+
+        </div>
+    }
+
+</div>
+
+<br />
+
+<table class="table">
+
+    <tr>
+
+        <th>申請課</th>
+
+        <th>狀態</th>
+
+        @{
+            for (int i = 0; i < 12; i++)
+            {
+                if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
+                {
+                    break;
+                }
+
+                <th align="center">
+                    @Html.DisplayName(string.Format("{0}年{1}月", Model.SearchDate.AddMonths(i).Year, Model.SearchDate.AddMonths(i).Month))
+                </th>
+            }
+        }
+
+    </tr>
+
+
+
+        @{
+            var group = Model.Orders.GroupBy(model => model.ApplyDept);
+
+            foreach (var g in group)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    <tr>
+                        @{
+                            switch (i)
+                            {
+                                //收件 => 受理
+                                case 0:
+
+                                    <td>@g.First().ApplyDept</td>
+
+                                    <td>收件</td>
+
+                                    for (int j = 0; j < 12; j++)
+                                    {
+                                        if (Model.SearchDate.AddMonths(j).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(j).Month == DateTime.Now.Month)
+                                        {
+                                            break;
+                                        }
+
+                                        <td>
+                                            @g.Where(model => (model.ExpectStartDate.Year == Model.SearchDate.AddMonths(j).Year && model.ExpectStartDate.Month == Model.SearchDate.AddMonths(j).Month)).Count()
+                                        </td>
+                                    }
+
+                                    break;
+
+                                case 1:
+
+                                    <td></td>
+
+                                    <td>完成</td>
+
+                                    for (int j = 0; j < 12; j++)
+                                    {
+                                        if (Model.SearchDate.AddMonths(j).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(j).Month == DateTime.Now.Month)
+                                        {
+                                            break;
+                                        }
+
+                                        <td>
+                                            @g.Where(model => (model.ExpectStartDate.Year == Model.SearchDate.AddMonths(j).Year && model.ExpectStartDate.Month == Model.SearchDate.AddMonths(j).Month)).Where(model => model.State == "結案").Count()
+                                        </td>
+                                    }
+
+                                    break;
+                                //累計未完成
+                                case 2:
+
+                                    <td></td>
+
+                                    <td>累計未完成</td>
+
+                                    for (int j = 0; j < 12; j++)
+                                    {
+                                        if (Model.SearchDate.AddMonths(j).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(j).Month == DateTime.Now.Month)
+                                        {
+                                            break;
+                                        }
+
+                                        <td>
+                                            @g.Where(model => (model.ExpectStartDate.Date < Model.SearchDate.Date || (model.ExpectStartDate.Year == Model.SearchDate.AddMonths(j).Year && model.ExpectStartDate.Month == Model.SearchDate.AddMonths(j).Month))).Where(model => model.State != "結案").Count()
+                                        </td>
+                                    }
+
+                                    break;
+                            }
+                        }
+                    </tr>
+                }
+            }
+        }
+
+
+
+</table>
+
+<br />
+
+<div>
+
+    <div id="dept_order_unfinishpercent_pie_chart_div"></div>
+
+    <br />
+
+    <div id="dept_order_finishpercent_bar_chart_div"></div>
+
+</div>

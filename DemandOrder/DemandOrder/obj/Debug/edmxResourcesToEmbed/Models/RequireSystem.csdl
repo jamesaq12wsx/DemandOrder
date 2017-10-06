@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RequireSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EPMReportingTime">
+    <Key>
+      <PropertyRef Name="idx" />
+    </Key>
+    <Property Name="idx" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="EmpID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="TimesheetCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ActualWorkHrs" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PlanWorkHrs" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="Estimate">
+    <Key>
+      <PropertyRef Name="EstimateSN" />
+    </Key>
+    <Property Name="EstimateSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EstimateUnit" Type="Int32" />
+    <Property Name="EstimateResult" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EstimateDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EstimateDate" Type="DateTime" Precision="3" />
+    <Property Name="EstimateEmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITEmployee">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmpChiName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeptID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DeptChiName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UnitID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="UnitChiName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSubContract" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="OfficeDate" Type="DateTime" Precision="3" />
+    <Property Name="MgrEmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LawCompliance">
+    <Key>
+      <PropertyRef Name="LawUserID" />
+    </Key>
+    <Property Name="LawUserID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LawUserNO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="LawUserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LawUserDeptID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="LawUserDeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MSP_CUBE_TIME_BY_DAY">
+    <Key>
+      <PropertyRef Name="TIME_ID" />
+    </Key>
+    <Property Name="TIME_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIME_DATE" Type="DateTime" Precision="3" />
+    <Property Name="TIME_DAY" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_MONTH" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_YEAR" Type="Int32" />
+    <Property Name="TIME_DAY_OF_MONTH" Type="Int32" />
+    <Property Name="TIME_WEEK_OF_YEAR" Type="Int32" />
+    <Property Name="TIME_MONTH_OF_YEAR" Type="Int32" />
+    <Property Name="TIME_QTR" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_WORK_HOUR" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PersonalWeeklyReport">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="YearNum" />
+      <PropertyRef Name="WeekNum" />
+    </Key>
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="Descriptions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PersonalWeeklyReportProjectItem">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="YearNum" />
+      <PropertyRef Name="WeekNum" />
+      <PropertyRef Name="PrjID" />
+    </Key>
+    <Property Name="ItemSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ThisWeekProgress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NextWeekProgress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PersonalWeeklyReportRequestItem">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="YearNum" />
+      <PropertyRef Name="WeekNum" />
+      <PropertyRef Name="ReqID" />
+    </Key>
+    <Property Name="ItemSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAPrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ReqWorkStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Descriptions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="PrjID" />
+    </Key>
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrjType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrjName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DeptID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayMAPrjOnUI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FinishRate" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PlannedManMonth" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="AccumulationHour" Type="Decimal" Precision="30" Scale="2" />
+    <Property Name="TotalDocumentProduct" Type="Int32" />
+    <Property Name="ActualDocumentProduct" Type="Int32" />
+    <Property Name="PlannedBAFunctionPoint" Type="Int32" />
+    <Property Name="PlannedCloseFunctionPoint" Type="Int32" />
+    <Property Name="PlannedPEPFunctionPoint" Type="Int32" />
+    <Property Name="IsBuildBaseChange" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsInfluenceTime" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsCommitmentChange" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsRiskItem" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsRiskCountermeasure" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsKeyManOnTime" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsMemberTrain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SPI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PrjStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NewPrjScale" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsCMMIPrj" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsOutsourcing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsITProject" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ImpactValue" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CIPercent" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AuditPercent" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CLF1" Type="Int32" />
+    <Property Name="CLF2" Type="Int32" />
+    <Property Name="CLF3" Type="Int32" />
+    <Property Name="PRFNew" Type="Int32" />
+    <Property Name="PRFDelay" Type="Int32" />
+    <Property Name="PRFFinish" Type="Int32" />
+    <Property Name="PRFAll" Type="Int32" />
+    <Property Name="PlannedStartDate" Type="DateTime" Precision="3" />
+    <Property Name="PlannedEndDate" Type="DateTime" Precision="3" />
+    <Property Name="AcceptDate" Type="DateTime" Precision="3" />
+    <Property Name="PrjCloseDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifyUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="OldPrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ThisWeekProgress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NextWeekProgress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OtherReportDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CheckItemDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RequireChangeSum" Type="Int32" />
+    <Property Name="RequireChangePlane" Type="Int32" />
+    <NavigationProperty Name="ProjectLog" Relationship="Self.FK_ProjectLog_Project" FromRole="Project" ToRole="ProjectLog" />
+  </EntityType>
+  <EntityType Name="ProjectLog">
+    <Key>
+      <PropertyRef Name="ProjectLogSN" />
+    </Key>
+    <Property Name="ProjectLogSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="LogType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FinishRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PlannedManMonth" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AccumulationHour" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalDocumentProduct" Type="Int32" />
+    <Property Name="ActualDocumentProduct" Type="Int32" />
+    <Property Name="PlannedBAFunctionPoint" Type="Int32" />
+    <Property Name="PlannedCloseFunctionPoint" Type="Int32" />
+    <Property Name="PlannedPEPFunctionPoint" Type="Int32" />
+    <Property Name="IsBuildBaseChange" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsInfluenceTime" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsCommitmentChange" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsRiskItem" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsRiskCountermeasure" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsKeyManOnTime" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsMemberTrain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SPI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PrjStatus" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="NewPrjScale" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsCMMIPrj" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsOutsourcing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsITProject" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ImpactValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CIPercent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AuditPercent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CLF1" Type="Int32" />
+    <Property Name="CLF2" Type="Int32" />
+    <Property Name="CLF3" Type="Int32" />
+    <Property Name="PRFNew" Type="Int32" />
+    <Property Name="PRFDelay" Type="Int32" />
+    <Property Name="PRFFinish" Type="Int32" />
+    <Property Name="PRFAll" Type="Int32" />
+    <Property Name="PlannedStartDate" Type="DateTime" Precision="3" />
+    <Property Name="PlannedEndDate" Type="DateTime" Precision="3" />
+    <Property Name="AcceptDate" Type="DateTime" Precision="3" />
+    <Property Name="PrjCloseDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifyUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ThisWeekProgress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NextWeekProgress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="OtherReportDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CheckItemDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RequireChangeSum" Type="Int32" />
+    <Property Name="RequireChangePlane" Type="Int32" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_ProjectLog_Project" FromRole="ProjectLog" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="ProjectRiskItem">
+    <Key>
+      <PropertyRef Name="PrjID" />
+      <PropertyRef Name="RiskID" />
+    </Key>
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RiskID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RiskIssueOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskDate" Type="DateTime" Precision="3" />
+    <Property Name="RiskDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RiskImpact" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskProbability" Type="Int32" />
+    <Property Name="RiskGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskCoverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskRule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskCountermeasure" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RiskOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskMemo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImpactValue" Type="Decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="ProjectRiskItemLog">
+    <Key>
+      <PropertyRef Name="RiskItemLogSN" />
+    </Key>
+    <Property Name="RiskItemLogSN" Type="Int32" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="LogType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="RiskID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="RiskIssueOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskDate" Type="DateTime" Precision="3" />
+    <Property Name="RiskDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RiskImpact" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskProbability" Type="Int32" />
+    <Property Name="RiskGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskCoverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskRule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskCountermeasure" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RiskOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskMemo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImpactValue" Type="Decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="ProjectTeamMember">
+    <Key>
+      <PropertyRef Name="PrjID" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="TeamMemberRole" />
+    </Key>
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TeamMemberRole" Type="Int32" Nullable="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThisWeekProgress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NextWeekProgress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProjectTeamMemberRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleChiName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleEngName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionSN" />
+    </Key>
+    <Property Name="QuestionSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="ReqCount" Type="Int32" />
+    <Property Name="AcceptanceCount" Type="Int32" />
+    <Property Name="MailCount1" Type="Int32" />
+    <Property Name="MailCount2" Type="Int32" />
+    <Property Name="ResponseCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="QuestionMember">
+    <Key>
+      <PropertyRef Name="MemberSN" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="MemberSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionSN" Type="Int32" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="QuestionStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="SendDate" Type="DateTime" Precision="3" />
+    <Property Name="SendYear" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="SendMonth" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="QuestionResponse">
+    <Key>
+      <PropertyRef Name="ResponseSN" />
+    </Key>
+    <Property Name="ResponseSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionSN" Type="Int32" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="EmpID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Choose1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Choose2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Choose3" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Choose4" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="OtherDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="ReqID" />
+    </Key>
+    <Property Name="FORMNO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FormType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ApplicantDes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ReqType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ReqSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReqDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ApplyDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpectedFinishedDate" Type="DateTime" Precision="3" />
+    <Property Name="ITDept" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MAProjectID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ReqStatus" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ITAccepter" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ITAcceptedDate" Type="DateTime" Precision="3" />
+    <Property Name="AcceptType" Type="Int32" />
+    <Property Name="EstimateAccepter" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="EstimateAcceptDate" Type="DateTime" Precision="3" />
+    <Property Name="EstimateType" Type="Int32" />
+    <Property Name="EstimateDesc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FPA" Type="Int32" />
+    <Property Name="PlannedStartDate" Type="DateTime" Precision="3" />
+    <Property Name="PlannedEndDate" Type="DateTime" Precision="3" />
+    <Property Name="ActualStartDate" Type="DateTime" Precision="3" />
+    <Property Name="ActualEndDate" Type="DateTime" Precision="3" />
+    <Property Name="AcceptStartDate" Type="DateTime" Precision="3" />
+    <Property Name="AcceptEndDate" Type="DateTime" Precision="3" />
+    <Property Name="ReqCloseDate" Type="DateTime" Precision="3" />
+    <Property Name="ReqCloseDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsWithdraw" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ReqCancelDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifyUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="OldReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ITResponse" Type="DateTime" Precision="3" />
+    <Property Name="CheckStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LawUserNO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="IsTDC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsTDCDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionSendDate" Type="DateTime" Precision="3" />
+    <Property Name="OverDueReplan" Type="Boolean" />
+    <Property Name="ProdDate" Type="DateTime" Precision="3" />
+    <Property Name="ProdPlanDate" Type="DateTime" Precision="3" />
+    <Property Name="ReqCmt" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="UriStartDate" Type="DateTime" Precision="3" />
+    <Property Name="UriFinishDate" Type="DateTime" Precision="3" />
+    <Property Name="UriDur" Type="Decimal" Precision="5" Scale="1" />
+    <Property Name="UriWorkPct" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="ModifiedCount" Type="Int32" />
+    <Property Name="Ominute" Type="Int32" />
+    <Property Name="nTimes" Type="Int32" />
+    <Property Name="ITUnitID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ITSigned" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="PIPNo" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="URScore1" Type="Int32" />
+    <Property Name="URScore2" Type="Int32" />
+    <Property Name="URScore3" Type="Int32" />
+    <Property Name="URScore" Type="Int32" />
+    <Property Name="ITScore1" Type="Int32" />
+    <Property Name="ITScore2" Type="Int32" />
+    <Property Name="ITScore" Type="Int32" />
+    <Property Name="TTLScore" Type="Int32" />
+    <Property Name="iGotData" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PlannedWorkHour" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="MARK1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MARK2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MARK3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MARK4" Type="Int32" />
+    <Property Name="MARK5" Type="Int32" />
+    <Property Name="SetupProjectID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RequestAttachment">
+    <Key>
+      <PropertyRef Name="ReqID" />
+      <PropertyRef Name="ItemLabel" />
+    </Key>
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemLabel" Type="String" MaxLength="260" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ContentSize" Type="Int32" />
+    <Property Name="UploadUser" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="UploadDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RequestHandler">
+    <Key>
+      <PropertyRef Name="ReqID" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="IsRequestOwner" />
+    </Key>
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IsRequestOwner" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WorkStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AcceptDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ItemTypeID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="ItemLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPlanDur" Type="Decimal" Precision="5" Scale="1" />
+    <Property Name="WorkPlanStartDate" Type="DateTime" Precision="3" />
+    <Property Name="WorkPlanEndDate" Type="DateTime" Precision="3" />
+    <Property Name="WorkPlanPct" Type="Decimal" Precision="3" Scale="2" />
+  </EntityType>
+  <EntityType Name="RequestType">
+    <Key>
+      <PropertyRef Name="TypeSN" />
+    </Key>
+    <Property Name="TypeSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="TypeLable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RiskType">
+    <Key>
+      <PropertyRef Name="RiskID" />
+    </Key>
+    <Property Name="RiskID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RiskType1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskItem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskDes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskImpact" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskProbability" Type="Int32" />
+    <Property Name="RiskCoverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskRule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RiskCountermeasure" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TimeSheetActualItem">
+    <Key>
+      <PropertyRef Name="ItemSN" />
+    </Key>
+    <Property Name="ItemSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ItemDate" Type="DateTime" Precision="3" />
+    <Property Name="YearNum" Type="Int32" />
+    <Property Name="WeekNum" Type="Int32" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ItemTypeID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkMinute" Type="Double" />
+    <Property Name="Descriptions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TimeSheetCmt">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="YearNum" />
+      <PropertyRef Name="WeekNum" />
+    </Key>
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="ItemCmt" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TimeSheetItemType">
+    <Key>
+      <PropertyRef Name="ItemSN" />
+      <PropertyRef Name="ItemTypeID" />
+    </Key>
+    <Property Name="ItemSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemTypeID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RateOfUsing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NeedPlannedData" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Enable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Applicability" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TimeSheetPlanItem">
+    <Key>
+      <PropertyRef Name="ItemSN" />
+    </Key>
+    <Property Name="ItemSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ItemDate" Type="DateTime" Precision="3" />
+    <Property Name="YearNum" Type="Int32" />
+    <Property Name="WeekNum" Type="Int32" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ItemTypeID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkMinute" Type="Double" />
+    <Property Name="Descriptions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tmpDNEED">
+    <Key>
+      <PropertyRef Name="Z_RESN" />
+    </Key>
+    <Property Name="SN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Z_RESN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Z_RENAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Z_KIND" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Z_CMMI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WBSItem">
+    <Key>
+      <PropertyRef Name="ItemSN" />
+      <PropertyRef Name="PrjID" />
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="ItemDes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlannedStartDate" Type="DateTime" Precision="3" />
+    <Property Name="PlannedEndDate" Type="DateTime" Precision="3" />
+    <Property Name="ActualStartDate" Type="DateTime" Precision="3" />
+    <Property Name="ActualEndDate" Type="DateTime" Precision="3" />
+    <Property Name="FinishRate" Type="Int32" />
+    <Property Name="DealPayment" Type="Int32" />
+    <Property Name="PaidPayment" Type="Int32" />
+    <Property Name="DocumentProduct" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SPI" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="WBSPath" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WBSItemLog">
+    <Key>
+      <PropertyRef Name="WBSItemLogSN" />
+      <PropertyRef Name="ItemSN" />
+      <PropertyRef Name="PrjID" />
+      <PropertyRef Name="YearNum" />
+      <PropertyRef Name="WeekNum" />
+      <PropertyRef Name="LogType" />
+    </Key>
+    <Property Name="WBSItemLogSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemSN" Type="Int32" Nullable="false" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YearNum" Type="Int32" Nullable="false" />
+    <Property Name="WeekNum" Type="Int32" Nullable="false" />
+    <Property Name="LogType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FinishRate" Type="Int32" />
+    <Property Name="PaidPayment" Type="Int32" />
+    <Property Name="SPI" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="ActualStartDate" Type="DateTime" Precision="3" />
+    <Property Name="ActualEndDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ApplicantInfo">
+    <Key>
+      <PropertyRef Name="ApplicantSN" />
+    </Key>
+    <Property Name="ApplicantSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrjID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ReqID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="EmpChiName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="EmpComPhoneNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DeptID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="DeptChiName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DeptMgrChiName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="UnitID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="UnitChiName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="UnitMgrChiName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ApplyMember">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmpChiName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DeptID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DeptChiName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UnitID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="UnitChiName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AssetDetail">
+    <Key>
+      <PropertyRef Name="ASSET_ID" />
+      <PropertyRef Name="ASSET_NAME" />
+      <PropertyRef Name="ASSET_CODE" />
+      <PropertyRef Name="SUBPOENA_DATE" />
+      <PropertyRef Name="BOOKING_DATE" />
+      <PropertyRef Name="DEPT_CODE" />
+      <PropertyRef Name="DEPT_NAME" />
+      <PropertyRef Name="ASSET_COST" />
+      <PropertyRef Name="ASSET_STATE" />
+      <PropertyRef Name="ASSET_DEPR" />
+      <PropertyRef Name="LAST_UPDATE" />
+    </Key>
+    <Property Name="ASSET_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ASSET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ASSET_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SUBPOENA_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BOOKING_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ASSET_COST" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="ASSET_STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ASSET_DEPR" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="LAST_UPDATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="BudgetDetail">
+    <Key>
+      <PropertyRef Name="TBBFM_DEPARTMENT_L_TYPES_ID" />
+      <PropertyRef Name="TBBFM_YEAR" />
+      <PropertyRef Name="TBBFM_PROJECT_ID" />
+      <PropertyRef Name="TBBFM_BUDGETS_ID" />
+      <PropertyRef Name="TBBFM_BUDGETS_NAME" />
+      <PropertyRef Name="TBBFM_BUDGETS_ITEM" />
+      <PropertyRef Name="START_DATE" />
+      <PropertyRef Name="END_DATE" />
+      <PropertyRef Name="NOTATION" />
+      <PropertyRef Name="AMOUNT" />
+    </Key>
+    <Property Name="TBBFM_DEPARTMENT_L_TYPES_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TBBFM_YEAR" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TBBFM_PROJECT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TBBFM_BUDGETS_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TBBFM_BUDGETS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TBBFM_BUDGETS_ITEM" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="END_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NOTATION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AMOUNT" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="AUDIT_AMOUNT" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="BAL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="AMOUNT_DIFF" Type="Decimal" Precision="16" Scale="4" />
+  </EntityType>
+  <EntityType Name="BugFormAmort">
+    <Key>
+      <PropertyRef Name="BUG_FORM_AMORT_ID" />
+      <PropertyRef Name="BUG_FORM_TYPE" />
+      <PropertyRef Name="BUG_FORM_NO" />
+      <PropertyRef Name="BUG_FORM_DATE" />
+    </Key>
+    <Property Name="BUG_FORM_AMORT_ID" Type="Int32" Nullable="false" />
+    <Property Name="BUG_FORM_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="BUG_FORM_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BUG_FORM_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BUG_FORM_AMORT_DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="BUG_FORM_AMORT_EMP_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="COST_CAT_ID" />
+      <PropertyRef Name="COST_CAT_NAME" />
+      <PropertyRef Name="COST_CAT_TYPE" />
+    </Key>
+    <Property Name="COST_CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="COST_CAT_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COST_CAT_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CostDept">
+    <Key>
+      <PropertyRef Name="COST_YEAR_MONTH" />
+      <PropertyRef Name="DEPT_CODE" />
+      <PropertyRef Name="COST_CAT_ID" />
+      <PropertyRef Name="COST" />
+    </Key>
+    <Property Name="COST_YEAR_MONTH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COST_CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="COST" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CostDetail">
+    <Key>
+      <PropertyRef Name="SUBPOENA_NO" />
+      <PropertyRef Name="SUBPOENA_DATE" />
+      <PropertyRef Name="DEP_UNIT_CODE1" />
+      <PropertyRef Name="DEP_UNIT_CODE2" />
+      <PropertyRef Name="COST_UNIT_CODE" />
+      <PropertyRef Name="ACC_CODE" />
+      <PropertyRef Name="ACC_NAME" />
+      <PropertyRef Name="AMT" />
+      <PropertyRef Name="ENTRY_TYPE" />
+      <PropertyRef Name="COST_TYPE_CODE" />
+      <PropertyRef Name="EXP_APPL_NO" />
+      <PropertyRef Name="BUG_ITEM_CODE" />
+      <PropertyRef Name="BUG_ITEM_NAME" />
+      <PropertyRef Name="LAST_UPDATE" />
+    </Key>
+    <Property Name="CLOSE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="SUBPOENA_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SUBPOENA_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DEP_UNIT_CODE1" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEP_UNIT_CODE2" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COST_UNIT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACC_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACC_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AMT" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="ENTRY_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COST_TYPE_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EXP_APPL_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BUG_ITEM_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BUG_ITEM_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LAST_UPDATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="CostMapping">
+    <Key>
+      <PropertyRef Name="COST_MAPPING_ID" />
+      <PropertyRef Name="COST_CAT_ID" />
+      <PropertyRef Name="ACC_CODE" />
+      <PropertyRef Name="BUG_CODE" />
+    </Key>
+    <Property Name="COST_MAPPING_ID" Type="Int32" Nullable="false" />
+    <Property Name="COST_CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACC_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BUG_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataModifyFormAmort">
+    <Key>
+      <PropertyRef Name="DATA_MODIFY_FORM_AMOR_ID" />
+      <PropertyRef Name="DATA_MODIFY_FORM_NO" />
+      <PropertyRef Name="DATA_MODIFY_FORM_DATE" />
+      <PropertyRef Name="DATA_MODIFY_FORM_AMORT_DEPT_CODE" />
+    </Key>
+    <Property Name="DATA_MODIFY_FORM_AMOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATA_MODIFY_FORM_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DATA_MODIFY_FORM_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DATA_MODIFY_FORM_AMORT_DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeptAmortFlag">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+      <PropertyRef Name="DEPT_NAME" />
+      <PropertyRef Name="IT_FLAG" />
+      <PropertyRef Name="SKY_FLAG" />
+      <PropertyRef Name="CORE_FLAG" />
+      <PropertyRef Name="DEPT_STATUS" />
+    </Key>
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IT_FLAG" Type="Boolean" Nullable="false" />
+    <Property Name="SKY_FLAG" Type="Boolean" Nullable="false" />
+    <Property Name="CORE_FLAG" Type="Boolean" Nullable="false" />
+    <Property Name="DEPT_STATUS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeptAmortFlag2">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+      <PropertyRef Name="INFRA_PCT" />
+      <PropertyRef Name="CORE_PCT" />
+      <PropertyRef Name="NEW_NCORE_PCT" />
+      <PropertyRef Name="OLD_NCORE_PCT" />
+      <PropertyRef Name="SKY_PCT" />
+      <PropertyRef Name="IT_PCT" />
+      <PropertyRef Name="STATUS" />
+    </Key>
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SKY" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="IT" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="COMS" Type="Int32" />
+    <Property Name="INFRA_PCT" Type="Decimal" Precision="18" Scale="17" Nullable="false" />
+    <Property Name="CORE_PCT" Type="Decimal" Precision="18" Scale="17" Nullable="false" />
+    <Property Name="NEW_NCORE_PCT" Type="Decimal" Precision="18" Scale="17" Nullable="false" />
+    <Property Name="OLD_NCORE_PCT" Type="Decimal" Precision="18" Scale="17" Nullable="false" />
+    <Property Name="SKY_PCT" Type="Decimal" Precision="18" Scale="17" Nullable="false" />
+    <Property Name="IT_PCT" Type="Decimal" Precision="18" Scale="17" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeptWH">
+    <Key>
+      <PropertyRef Name="WH_YEAR_MONTH" />
+      <PropertyRef Name="DEPT_CODE" />
+      <PropertyRef Name="TIME_CAT2_ID" />
+      <PropertyRef Name="ACT_WH" />
+      <PropertyRef Name="COST" />
+    </Key>
+    <Property Name="WH_YEAR_MONTH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT2_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACT_WH" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="COST" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EPMAssn">
+    <Key>
+      <PropertyRef Name="EPM_ASSN_UID" />
+      <PropertyRef Name="RES_UID" />
+      <PropertyRef Name="PROJ_UID" />
+    </Key>
+    <Property Name="EPM_ASSN_UID" Type="Guid" Nullable="false" />
+    <Property Name="EPM_ASSN_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EPM_ASSN_WBS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="EPM_ASSN_START" Type="DateTime" Precision="0" />
+    <Property Name="EPM_ASSN_FINISH" Type="DateTime" Precision="0" />
+    <Property Name="EPM_TIME_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RES_UID" Type="Guid" Nullable="false" />
+    <Property Name="PROJ_UID" Type="Guid" Nullable="false" />
+    <Property Name="PLAN_WH" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="PLAN_WH_BS0" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="PLAN_WH_BS6" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="PLAN_START_BS6" Type="DateTime" Precision="0" />
+    <Property Name="PLAN_FINISH_BS6" Type="DateTime" Precision="0" />
+    <Property Name="ACT_START" Type="DateTime" Precision="0" />
+    <Property Name="ACT_FINISH" Type="DateTime" Precision="0" />
+    <Property Name="DELETED_IN_PROJ" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EPMTimesheetWH">
+    <Key>
+      <PropertyRef Name="EPM_WORK_HOUR_ID" />
+    </Key>
+    <Property Name="EPM_WORK_HOUR_ID" Type="Int32" Nullable="false" />
+    <Property Name="WORK_DATE" Type="DateTime" Precision="0" />
+    <Property Name="TIMESHEET_RES_ID" Type="Int32" />
+    <Property Name="REQ_ID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="TASK_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PLAN_WH" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="PLAN_WH_BS0" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="PLAN_WH_BS6" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="ACT_WH" Type="Decimal" Precision="25" Scale="6" />
+    <Property Name="PROJ_UID" Type="Guid" />
+    <Property Name="SYS_UID" Type="Guid" />
+    <Property Name="ASSN_UID" Type="Guid" />
+    <Property Name="RES_UID" Type="Guid" />
+    <Property Name="TIME_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_CODE_PUBLISHED_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITOrg">
+    <Key>
+      <PropertyRef Name="IT_ORG_ID" />
+    </Key>
+    <Property Name="IT_ORG_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORG_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="P_ORG_ID" Type="Int32" />
+    <Property Name="ORG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MGR_RES_ID" Type="Int32" />
+    <Property Name="ORG_STATUS" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITOrgComs">
+    <Key>
+      <PropertyRef Name="IT_ORG_ID" />
+      <PropertyRef Name="ORG_COMS_DATE" />
+    </Key>
+    <Property Name="IT_ORG_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORG_COMS_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ORG_COMS" Type="Int32" />
+    <Property Name="ORG_IN_JOB" Type="Decimal" Precision="5" Scale="1" />
+    <Property Name="ORG_WH_JOB" Type="Decimal" Precision="5" Scale="1" />
+  </EntityType>
+  <EntityType Name="ITOrgRes">
+    <Key>
+      <PropertyRef Name="IT_ORG_RES_ID" />
+      <PropertyRef Name="EMP_STATUS" />
+    </Key>
+    <Property Name="IT_ORG_RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="IT_ORG_ID" Type="Int32" />
+    <Property Name="EMP_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="IN_POSTID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="IN_POSTNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IN_POSTLEVELID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="IN_POSTLEVELNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_AD_ACCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_STATUS" Type="Int32" Nullable="false" />
+    <Property Name="RES_UID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="ITYearBudget">
+    <Key>
+      <PropertyRef Name="IT_BUDGET_YEAR" />
+      <PropertyRef Name="IT_BUDGET_AMT" />
+      <PropertyRef Name="IT_BUDGET_PCT" />
+    </Key>
+    <Property Name="IT_BUDGET_YEAR" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IT_BUDGET_AMT" Type="Int32" Nullable="false" />
+    <Property Name="IT_BUDGET_PCT" Type="Decimal" Precision="7" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ITYearCost">
+    <Key>
+      <PropertyRef Name="IT_COST_YEAR_MONTH" />
+      <PropertyRef Name="IT_COST_TYPE" />
+      <PropertyRef Name="IT_COST_AMT" />
+    </Key>
+    <Property Name="IT_COST_YEAR_MONTH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IT_COST_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="IT_COST_AMT" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobMapping">
+    <Key>
+      <PropertyRef Name="JOB_MAPPING_ID" />
+      <PropertyRef Name="JOB_NAME" />
+      <PropertyRef Name="JOB_CAT1" />
+      <PropertyRef Name="JOB_CAT2" />
+      <PropertyRef Name="JOB_CAT3" />
+    </Key>
+    <Property Name="JOB_MAPPING_ID" Type="Int32" Nullable="false" />
+    <Property Name="JOB_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JOB_CAT1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JOB_CAT2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JOB_CAT3" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobRule">
+    <Key>
+      <PropertyRef Name="JOB_RULE_ID" />
+      <PropertyRef Name="JOB_MAPPING_ID" />
+      <PropertyRef Name="JOB_TC1" />
+      <PropertyRef Name="JOB_TC2" />
+      <PropertyRef Name="JOB_RULE" />
+      <PropertyRef Name="JOB_RULE_SUM" />
+    </Key>
+    <Property Name="JOB_RULE_ID" Type="Int32" Nullable="false" />
+    <Property Name="JOB_MAPPING_ID" Type="Int32" Nullable="false" />
+    <Property Name="JOB_TC1" Type="Int32" Nullable="false" />
+    <Property Name="JOB_TC2" Type="Int32" Nullable="false" />
+    <Property Name="JOB_RULE" Type="Int32" Nullable="false" />
+    <Property Name="JOB_RULE_SUM" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="L1Mgr">
+    <Key>
+      <PropertyRef Name="L1_MGR_ID" />
+      <PropertyRef Name="L1_MGR_NAME" />
+      <PropertyRef Name="L1_MGR_AREA" />
+    </Key>
+    <Property Name="L1_MGR_ID" Type="Int32" Nullable="false" />
+    <Property Name="L1_MGR_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="L1_MGR_AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="L1MgrDeptMapping">
+    <Key>
+      <PropertyRef Name="L1_MGR_DEPT_MAPPING_ID" />
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="L1_MGR_DEPT_MAPPING_ID" Type="Int32" Nullable="false" />
+    <Property Name="L1_MGR_ID" Type="Int32" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LaborCostRuleMapping">
+    <Key>
+      <PropertyRef Name="LABOR_COST_RULE_MAPPING_ID" />
+      <PropertyRef Name="TIME_CAT2_ID" />
+      <PropertyRef Name="LABOR_RULE_YEAR" />
+    </Key>
+    <Property Name="LABOR_COST_RULE_MAPPING_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT2_ID" Type="Int32" Nullable="false" />
+    <Property Name="LABOR_RULE_TYPE" Type="Int32" />
+    <Property Name="LABOR_RULE_YEAR" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="MemberRight">
+    <Key>
+      <PropertyRef Name="MEMBER_RIGHT_ID" />
+    </Key>
+    <Property Name="MEMBER_RIGHT_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBER_RIGHT_CAT_ORDER" Type="Int32" />
+    <Property Name="MEMBER_RIGHT_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MEMBER_RIGHT_FUN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MEMBER_RIGHT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MEMBER_RIGHT_ORDER" Type="Int32" />
+    <Property Name="MEMBER_RIGHT_FLAG" Type="Int32" />
+    <Property Name="MEMBER_RIGHT_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MEMBER_RIGHT_IS_MENU" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MemberRole">
+    <Key>
+      <PropertyRef Name="MEMBER_ROLE_ID" />
+      <PropertyRef Name="MEMBER_ROLE_NAME" />
+    </Key>
+    <Property Name="MEMBER_ROLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBER_ROLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemberRoleRight">
+    <Key>
+      <PropertyRef Name="MEMBER_ROLE_RIGHT_ID" />
+      <PropertyRef Name="MEMBER_ROLE_ID" />
+      <PropertyRef Name="MEMBER_RIGHT_ID" />
+    </Key>
+    <Property Name="MEMBER_ROLE_RIGHT_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBER_ROLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBER_RIGHT_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MonthWorkDay">
+    <Key>
+      <PropertyRef Name="MONTH_WORK_DAY_ID" />
+    </Key>
+    <Property Name="MONTH_WORK_DAY_ID" Type="Int32" Nullable="false" />
+    <Property Name="WORK_MONTH" Type="DateTime" Precision="0" />
+    <Property Name="WORK_DAY" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OrganizeData">
+    <Key>
+      <PropertyRef Name="UnitID" />
+      <PropertyRef Name="Parent_UnitID" />
+      <PropertyRef Name="Unit_ShortName" />
+      <PropertyRef Name="UnitName" />
+    </Key>
+    <Property Name="UnitID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Parent_UnitID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Unit_ShortName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UnitName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjAmort">
+    <Key>
+      <PropertyRef Name="PROJ_AMORT_ID" />
+    </Key>
+    <Property Name="PROJ_AMORT_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROJ_UID" Type="Guid" />
+    <Property Name="PROJ_AMORT_DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_AMORT_PCT" Type="Decimal" Precision="3" Scale="2" />
+  </EntityType>
+  <EntityType Name="ProjDetail">
+    <Key>
+      <PropertyRef Name="PROJ_UID" />
+      <PropertyRef Name="PROJ_UPDATE_DATE" />
+      <PropertyRef Name="PROJ_OWNER_ACCT" />
+      <PropertyRef Name="PROJ_NAME" />
+      <PropertyRef Name="PROJ_CODE" />
+      <PropertyRef Name="PROJ_STATUS" />
+      <PropertyRef Name="PROJ_START" />
+      <PropertyRef Name="PROJ_FINISH" />
+      <PropertyRef Name="PROJ_SPI" />
+      <PropertyRef Name="PROJ_DUR_BS6" />
+      <PropertyRef Name="PROJ_DUR_BS0" />
+      <PropertyRef Name="PROJ_PLAN_WH_BS6" />
+      <PropertyRef Name="PROJ_PLAN_WH_BS0" />
+      <PropertyRef Name="PROJ_SH_WH_BS0" />
+      <PropertyRef Name="PROJ_SH_WH_BS6" />
+      <PropertyRef Name="PROJ_ACT_PCT_BS0" />
+      <PropertyRef Name="PROJ_ACT_PCT_BS6" />
+      <PropertyRef Name="PROJ_YEAR_PLAN_WH_BS6" />
+      <PropertyRef Name="PROJ_YEAR_ACT_WH" />
+      <PropertyRef Name="PROJ_STATUS_FLAG" />
+      <PropertyRef Name="PROJ_PLAN_WH" />
+      <PropertyRef Name="PROJ_ACT_WH" />
+      <PropertyRef Name="PROJ_PLAN_DUR" />
+      <PropertyRef Name="PROJ_ACT_DUR" />
+    </Key>
+    <Property Name="PROJ_UID" Type="Guid" Nullable="false" />
+    <Property Name="PROJ_UPDATE_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PROJ_OWNER_ACCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_START" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PROJ_FINISH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PROJ_SPI" Type="Decimal" Precision="3" Scale="2" Nullable="false" />
+    <Property Name="PROJ_DUR_BS6" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="PROJ_DUR_BS0" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="PROJ_PLAN_WH_BS6" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_PLAN_WH_BS0" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_SH_WH_BS0" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_SH_WH_BS6" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_PLAN_PCT_BS0" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PROJ_PLAN_PCT_BS6" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PROJ_ACT_PCT_BS0" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PROJ_ACT_PCT_BS6" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PROJ_YEAR_PLAN_WH_BS6" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_YEAR_ACT_WH" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_STATUS_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_PLAN_WH" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_ACT_WH" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="PROJ_PLAN_DUR" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="PROJ_ACT_DUR" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="PROJ_NOW_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_OWNER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_DEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_KICKOFF_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_ONLINE_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_ACTONLINE_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_MILESTONE_PCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_SPI_PRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PMO_STATUS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PMO_RES" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PMO_RPT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_FP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_BUDGET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_AMT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_AMT_PAY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_AMT_PAID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PRO_DEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PRO_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProjDetailExcel">
+    <Key>
+      <PropertyRef Name="PROJ_UPDATE_DATE" />
+      <PropertyRef Name="PROJ_NAME" />
+      <PropertyRef Name="PROJ_CODE" />
+      <PropertyRef Name="PROJ_SPI" />
+      <PropertyRef Name="PROJ_STATUS_FLAG" />
+      <PropertyRef Name="PROJ_PLAN_WH" />
+      <PropertyRef Name="PROJ_ACT_WH" />
+      <PropertyRef Name="PROJ_PLAN_DUR" />
+      <PropertyRef Name="PROJ_ACT_DUR" />
+    </Key>
+    <Property Name="PROJ_UPDATE_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PROJ_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_SPI" Type="Decimal" Precision="3" Scale="2" Nullable="false" />
+    <Property Name="PROJ_STATUS_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJ_PLAN_WH" Type="Decimal" Precision="8" Scale="1" Nullable="false" />
+    <Property Name="PROJ_ACT_WH" Type="Decimal" Precision="8" Scale="1" Nullable="false" />
+    <Property Name="PROJ_PLAN_DUR" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="PROJ_ACT_DUR" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="PROJ_NOW_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_OWNER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_DEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_KICKOFF_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_ONLINE_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_ACTONLINE_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_MILESTONE_PCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_SPI_PRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PMO_STATUS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PMO_RES" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PMO_RPT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_FP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_BUDGET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_AMT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_AMT_PAY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_CONT_AMT_PAID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_ACT_PCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_ACT_WH_PCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PRO_DEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJ_PRO_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProjSysMapping">
+    <Key>
+      <PropertyRef Name="PROJ_SYS_MAPPING_ID" />
+    </Key>
+    <Property Name="PROJ_SYS_MAPPING_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROJ_UID" Type="Guid" />
+    <Property Name="SYS_UID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="ReqAssn">
+    <Key>
+      <PropertyRef Name="REQ_ASSN_ID" />
+    </Key>
+    <Property Name="REQ_ASSN_ID" Type="Int32" Nullable="false" />
+    <Property Name="REQ_DETAIL_ID" Type="Int32" />
+    <Property Name="REQ_ASSN_START" Type="DateTime" Precision="0" />
+    <Property Name="REQ_ASSN_FINISH" Type="DateTime" Precision="0" />
+    <Property Name="REQ_ASSN_DUR" Type="Decimal" Precision="5" Scale="1" />
+    <Property Name="REQ_TIME_CODE" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PLAN_WH" Type="Decimal" Precision="8" Scale="1" />
+    <Property Name="EMP_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReqDept">
+    <Key>
+      <PropertyRef Name="REQ_ID" />
+      <PropertyRef Name="EMP_NO" />
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="REQ_ID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReqDetail">
+    <Key>
+      <PropertyRef Name="REQ_DETAIL_ID" />
+      <PropertyRef Name="REQ_ID" />
+      <PropertyRef Name="REQ_DEPT_CODE" />
+      <PropertyRef Name="REQ_SEC_CODE" />
+      <PropertyRef Name="REQ_STATUS" />
+      <PropertyRef Name="REQ_WORK_NAME" />
+      <PropertyRef Name="LINE_CODE" />
+      <PropertyRef Name="LINE_NAME" />
+    </Key>
+    <Property Name="REQ_DETAIL_ID" Type="Int32" Nullable="false" />
+    <Property Name="REQ_ID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQ_DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQ_SEC_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FORM_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQ_WORK_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQ_APPLY_DATE" Type="DateTime" Precision="0" />
+    <Property Name="REQ_CLOSE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="LINE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LINE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReqTimesheetWH">
+    <Key>
+      <PropertyRef Name="REQ_WORK_HOUR_ID" />
+    </Key>
+    <Property Name="REQ_WORK_HOUR_ID" Type="Int32" Nullable="false" />
+    <Property Name="WORK_DATE" Type="DateTime" Precision="0" />
+    <Property Name="TIMESHEET_RES_ID" Type="Int32" />
+    <Property Name="REQ_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_WORK_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PLAN_WH_BS0" Type="Decimal" Precision="8" Scale="1" />
+    <Property Name="ACT_WH" Type="Decimal" Precision="8" Scale="1" />
+    <Property Name="TIME_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_CODE_PUBLISHED_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Serial">
+    <Key>
+      <PropertyRef Name="SerialSN" />
+      <PropertyRef Name="SerialClass" />
+    </Key>
+    <Property Name="SerialSN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SerialClass" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SerialID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NowSerialID" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SysStatus">
+    <Key>
+      <PropertyRef Name="SYS_STATUS_ID" />
+      <PropertyRef Name="SYS_STATUS_CAT" />
+      <PropertyRef Name="SYS_STATUS_MSG" />
+      <PropertyRef Name="SYS_STATUS_TYPE" />
+      <PropertyRef Name="SYS_DATA_DATE" />
+      <PropertyRef Name="SYS_STATUS_DATE" />
+    </Key>
+    <Property Name="SYS_STATUS_ID" Type="Int32" Nullable="false" />
+    <Property Name="SYS_STATUS_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SYS_STATUS_MSG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SYS_STATUS_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="SYS_DATA_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SYS_STATUS_DATE" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="SystemMember">
+    <Key>
+      <PropertyRef Name="SYS_MEMBER_ID" />
+      <PropertyRef Name="MEMBER_ROLE_ID" />
+      <PropertyRef Name="EMP_AD_ACCT" />
+    </Key>
+    <Property Name="SYS_MEMBER_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBER_ROLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="EMP_AD_ACCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCat1">
+    <Key>
+      <PropertyRef Name="TIME_CAT1_ID" />
+      <PropertyRef Name="TIME_CAT1_NAME" />
+      <PropertyRef Name="TIME_CAT1_ORDER" />
+    </Key>
+    <Property Name="TIME_CAT1_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT1_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT1_ORDER" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCat2">
+    <Key>
+      <PropertyRef Name="TIME_CAT2_ID" />
+      <PropertyRef Name="TIME_CAT1_ID" />
+      <PropertyRef Name="TIME_CAT2_NAME" />
+      <PropertyRef Name="TIME_CAT2_PRD" />
+      <PropertyRef Name="TIME_CAT2_ORDER" />
+    </Key>
+    <Property Name="TIME_CAT2_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT1_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT2_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT2_PRD" Type="Boolean" Nullable="false" />
+    <Property Name="TIME_CAT2_ORDER" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCat3">
+    <Key>
+      <PropertyRef Name="TIME_CAT3_ID" />
+      <PropertyRef Name="TIME_CAT2_ID" />
+      <PropertyRef Name="TIME_CAT3_NAME" />
+      <PropertyRef Name="TIME_CAT3_ORDER" />
+    </Key>
+    <Property Name="TIME_CAT3_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT2_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT3_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT3_ORDER" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCode">
+    <Key>
+      <PropertyRef Name="TIME_CODE_ID" />
+      <PropertyRef Name="TIME_CAT3_ID" />
+      <PropertyRef Name="TIME_CODE" />
+      <PropertyRef Name="TIME_CODE_NAME" />
+      <PropertyRef Name="TIME_CODE_DESC" />
+      <PropertyRef Name="TIME_CODE_DESC2" />
+      <PropertyRef Name="TIME_CODE_ORDER" />
+    </Key>
+    <Property Name="TIME_CODE_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT3_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_DESC2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_ORDER" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCodePublish">
+    <Key>
+      <PropertyRef Name="TIME_CODE_PUBLISH_ID" />
+      <PropertyRef Name="TIME_CODE_YEAR" />
+      <PropertyRef Name="TIME_CAT1_ID" />
+      <PropertyRef Name="TIME_CAT1_NAME" />
+      <PropertyRef Name="TIME_CAT1_ORDER" />
+      <PropertyRef Name="TIME_CAT2_NAME" />
+      <PropertyRef Name="TIME_CAT2_ID" />
+      <PropertyRef Name="TIME_CAT2_PRD" />
+      <PropertyRef Name="TIME_CAT2_ORDER" />
+      <PropertyRef Name="TIME_CAT3_ID" />
+      <PropertyRef Name="TIME_CAT3_NAME" />
+      <PropertyRef Name="TIME_CAT3_ORDER" />
+      <PropertyRef Name="TIME_CODE_ID" />
+      <PropertyRef Name="TIME_CODE" />
+      <PropertyRef Name="TIME_CODE_NAME" />
+      <PropertyRef Name="TIME_CODE_DESC1" />
+      <PropertyRef Name="TIME_CODE_DESC2" />
+      <PropertyRef Name="TIME_CODE_ORDER" />
+    </Key>
+    <Property Name="TIME_CODE_PUBLISH_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CODE_YEAR" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TIME_CAT1_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT1_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT1_ORDER" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT2_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT2_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT2_PRD" Type="Boolean" Nullable="false" />
+    <Property Name="TIME_CAT2_ORDER" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT3_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CAT3_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CAT3_ORDER" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CODE_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIME_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_DESC1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_DESC2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_CODE_ORDER" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimesheetRes">
+    <Key>
+      <PropertyRef Name="TIMESHEET_RES_ID" />
+      <PropertyRef Name="EMP_DATE" />
+    </Key>
+    <Property Name="TIMESHEET_RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_AD_ACCT" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RES_UID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="webloginb">
+    <Key>
+      <PropertyRef Name="Col003" />
+    </Key>
+    <Property Name="Col001" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Col002" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col003" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Col004" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Col005" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Col006" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Col007" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Col008" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col009" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col010" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col011" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Col012" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col013" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Col014" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Col015" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Col016" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Col017" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col018" Type="Int32" />
+    <Property Name="Col019" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Col020" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="Col021" Type="Int32" />
+    <Property Name="Col022" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Col023" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Col024" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col025" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Col026" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Col027" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Col028" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Col029" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Col030" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Col031" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Col032" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Col033" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Col034" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="YearPlanProj">
+    <Key>
+      <PropertyRef Name="YEAR_PLAN_PROJ_ID" />
+      <PropertyRef Name="PLAN_YEAR" />
+      <PropertyRef Name="IT_ORG_ID" />
+      <PropertyRef Name="PROJ_NAME" />
+    </Key>
+    <Property Name="YEAR_PLAN_PROJ_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLAN_YEAR" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IT_ORG_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROJ_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YearPlanProjRes">
+    <Key>
+      <PropertyRef Name="YEAR_PLAN_PROJ_RES_ID" />
+    </Key>
+    <Property Name="YEAR_PLAN_PROJ_RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLAN_YEAR_MONTH" Type="DateTime" Precision="0" />
+    <Property Name="IT_ORG_ID" Type="Int32" />
+    <Property Name="YEAR_PLAN_RES_ID" Type="Int32" />
+    <Property Name="YEAR_PLAN_PROJ_ID" Type="Int32" />
+    <Property Name="RES_PLAN_PCT" Type="Decimal" Precision="3" Scale="2" />
+  </EntityType>
+  <EntityType Name="YearPlanRes">
+    <Key>
+      <PropertyRef Name="YEAR_PLAN_RES_ID" />
+    </Key>
+    <Property Name="YEAR_PLAN_RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLAN_YEAR" Type="DateTime" Precision="0" />
+    <Property Name="IT_ORG_ID" Type="Int32" />
+    <Property Name="RES_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_ProjectLog_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectLog" Type="Self.ProjectLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PrjID" />
+      </Principal>
+      <Dependent Role="ProjectLog">
+        <PropertyRef Name="PrjID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RequireSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" />
+    <EntitySet Name="EPMReportingTime" EntityType="Self.EPMReportingTime" />
+    <EntitySet Name="Estimate" EntityType="Self.Estimate" />
+    <EntitySet Name="ITEmployee" EntityType="Self.ITEmployee" />
+    <EntitySet Name="LawCompliance" EntityType="Self.LawCompliance" />
+    <EntitySet Name="MSP_CUBE_TIME_BY_DAY" EntityType="Self.MSP_CUBE_TIME_BY_DAY" />
+    <EntitySet Name="PersonalWeeklyReport" EntityType="Self.PersonalWeeklyReport" />
+    <EntitySet Name="PersonalWeeklyReportProjectItem" EntityType="Self.PersonalWeeklyReportProjectItem" />
+    <EntitySet Name="PersonalWeeklyReportRequestItem" EntityType="Self.PersonalWeeklyReportRequestItem" />
+    <EntitySet Name="Project" EntityType="Self.Project" />
+    <EntitySet Name="ProjectLog" EntityType="Self.ProjectLog" />
+    <EntitySet Name="ProjectRiskItem" EntityType="Self.ProjectRiskItem" />
+    <EntitySet Name="ProjectRiskItemLog" EntityType="Self.ProjectRiskItemLog" />
+    <EntitySet Name="ProjectTeamMember" EntityType="Self.ProjectTeamMember" />
+    <EntitySet Name="ProjectTeamMemberRole" EntityType="Self.ProjectTeamMemberRole" />
+    <EntitySet Name="Question" EntityType="Self.Question" />
+    <EntitySet Name="QuestionMember" EntityType="Self.QuestionMember" />
+    <EntitySet Name="QuestionResponse" EntityType="Self.QuestionResponse" />
+    <EntitySet Name="Request" EntityType="Self.Request" />
+    <EntitySet Name="RequestAttachment" EntityType="Self.RequestAttachment" />
+    <EntitySet Name="RequestHandler" EntityType="Self.RequestHandler" />
+    <EntitySet Name="RequestType" EntityType="Self.RequestType" />
+    <EntitySet Name="RiskType" EntityType="Self.RiskType" />
+    <EntitySet Name="TimeSheetActualItem" EntityType="Self.TimeSheetActualItem" />
+    <EntitySet Name="TimeSheetCmt" EntityType="Self.TimeSheetCmt" />
+    <EntitySet Name="TimeSheetItemType" EntityType="Self.TimeSheetItemType" />
+    <EntitySet Name="TimeSheetPlanItem" EntityType="Self.TimeSheetPlanItem" />
+    <EntitySet Name="tmpDNEED" EntityType="Self.tmpDNEED" />
+    <EntitySet Name="WBSItem" EntityType="Self.WBSItem" />
+    <EntitySet Name="WBSItemLog" EntityType="Self.WBSItemLog" />
+    <EntitySet Name="ApplicantInfo" EntityType="Self.ApplicantInfo" />
+    <EntitySet Name="ApplyMember" EntityType="Self.ApplyMember" />
+    <EntitySet Name="AssetDetail" EntityType="Self.AssetDetail" />
+    <EntitySet Name="BudgetDetail" EntityType="Self.BudgetDetail" />
+    <EntitySet Name="BugFormAmort" EntityType="Self.BugFormAmort" />
+    <EntitySet Name="CostCategory" EntityType="Self.CostCategory" />
+    <EntitySet Name="CostDept" EntityType="Self.CostDept" />
+    <EntitySet Name="CostDetail" EntityType="Self.CostDetail" />
+    <EntitySet Name="CostMapping" EntityType="Self.CostMapping" />
+    <EntitySet Name="DataModifyFormAmort" EntityType="Self.DataModifyFormAmort" />
+    <EntitySet Name="DeptAmortFlag" EntityType="Self.DeptAmortFlag" />
+    <EntitySet Name="DeptAmortFlag2" EntityType="Self.DeptAmortFlag2" />
+    <EntitySet Name="DeptWH" EntityType="Self.DeptWH" />
+    <EntitySet Name="EPMAssn" EntityType="Self.EPMAssn" />
+    <EntitySet Name="EPMTimesheetWH" EntityType="Self.EPMTimesheetWH" />
+    <EntitySet Name="ITOrg" EntityType="Self.ITOrg" />
+    <EntitySet Name="ITOrgComs" EntityType="Self.ITOrgComs" />
+    <EntitySet Name="ITOrgRes" EntityType="Self.ITOrgRes" />
+    <EntitySet Name="ITYearBudget" EntityType="Self.ITYearBudget" />
+    <EntitySet Name="ITYearCost" EntityType="Self.ITYearCost" />
+    <EntitySet Name="JobMapping" EntityType="Self.JobMapping" />
+    <EntitySet Name="JobRule" EntityType="Self.JobRule" />
+    <EntitySet Name="L1Mgr" EntityType="Self.L1Mgr" />
+    <EntitySet Name="L1MgrDeptMapping" EntityType="Self.L1MgrDeptMapping" />
+    <EntitySet Name="LaborCostRuleMapping" EntityType="Self.LaborCostRuleMapping" />
+    <EntitySet Name="MemberRight" EntityType="Self.MemberRight" />
+    <EntitySet Name="MemberRole" EntityType="Self.MemberRole" />
+    <EntitySet Name="MemberRoleRight" EntityType="Self.MemberRoleRight" />
+    <EntitySet Name="MonthWorkDay" EntityType="Self.MonthWorkDay" />
+    <EntitySet Name="OrganizeData" EntityType="Self.OrganizeData" />
+    <EntitySet Name="ProjAmort" EntityType="Self.ProjAmort" />
+    <EntitySet Name="ProjDetail" EntityType="Self.ProjDetail" />
+    <EntitySet Name="ProjDetailExcel" EntityType="Self.ProjDetailExcel" />
+    <EntitySet Name="ProjSysMapping" EntityType="Self.ProjSysMapping" />
+    <EntitySet Name="ReqAssn" EntityType="Self.ReqAssn" />
+    <EntitySet Name="ReqDept" EntityType="Self.ReqDept" />
+    <EntitySet Name="ReqDetail" EntityType="Self.ReqDetail" />
+    <EntitySet Name="ReqTimesheetWH" EntityType="Self.ReqTimesheetWH" />
+    <EntitySet Name="Serial" EntityType="Self.Serial" />
+    <EntitySet Name="SysStatus" EntityType="Self.SysStatus" />
+    <EntitySet Name="SystemMember" EntityType="Self.SystemMember" />
+    <EntitySet Name="TimeCat1" EntityType="Self.TimeCat1" />
+    <EntitySet Name="TimeCat2" EntityType="Self.TimeCat2" />
+    <EntitySet Name="TimeCat3" EntityType="Self.TimeCat3" />
+    <EntitySet Name="TimeCode" EntityType="Self.TimeCode" />
+    <EntitySet Name="TimeCodePublish" EntityType="Self.TimeCodePublish" />
+    <EntitySet Name="TimesheetRes" EntityType="Self.TimesheetRes" />
+    <EntitySet Name="webloginb" EntityType="Self.webloginb" />
+    <EntitySet Name="YearPlanProj" EntityType="Self.YearPlanProj" />
+    <EntitySet Name="YearPlanProjRes" EntityType="Self.YearPlanProjRes" />
+    <EntitySet Name="YearPlanRes" EntityType="Self.YearPlanRes" />
+    <AssociationSet Name="FK_ProjectLog_Project" Association="Self.FK_ProjectLog_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectLog" EntitySet="ProjectLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
