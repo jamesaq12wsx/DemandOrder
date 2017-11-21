@@ -6,7 +6,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/popper/popper.min.js"></script>
-    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @*<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>*@
     <!-- Plugin JavaScript -->
     <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Contact Form JavaScript -->
@@ -56,36 +57,42 @@
 </div>*@
 
 
-<body id="page-top">
+<body id="page-top" style="font-family:微軟正黑體;">
     <!-- Header -->
     <header class="masthead">
-        <div class="container">
+        <div class="container" >
             <img class="img-fluid" src="img/profile.png" alt="">
             <div class="intro-text">
-                <span class="name">個人專題-需求單表格</span>
+                <span class="name" style="font-family:微軟正黑體;">個人專題-需求單表格</span>
                 <hr class="star-light">
-                <span class="skills">資訊規劃部 - 林紹瑾</span>
+                <span class="skills" style="font-family:微軟正黑體;">資訊規劃部 - 林紹瑾</span>
             </div>
         </div>
     </header>
     <!-- Portfolio Grid Section -->
     <section id="portfolio" >
         <div class="container">
-            <h2 class="text-center">介紹</h2>
+            <h2 class="text-center" style="font-family:微軟正黑體;">介紹</h2>
             <hr class="star-primary">
             <div class="row">
                 <div class="col-lg-4 ml-auto">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>需求單分析表目前都是使用人工的方式來建立，因應之後系統納管，個人電腦將無法取得需錢單的資料
+                    ，因此藉由這次實作來將需求單分析表系統化</p>
                 </div>
                 <div class="col-lg-4 mr-auto">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p><span>功能一 - 電腦需求單受理件數以及趨勢圖</span>
+                    <br />
+                    藉由選擇部室以及日期顯示出這一年的需求單表格以及趨勢圖，也可以查看任一個月任一狀態的需求單究竟有哪些</p>
                 </div>
                 <div class="col-lg-4 mr-auto">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p><span>功能二 - 需求單申請部門表單</span>
+                    <br />
+                    查看各需求單申請部門的狀態</p>
                 </div>
             </div>
         </div>
     </section>
+    @*
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -107,6 +114,7 @@
             </div>
         </div>
     </section>
+    *@
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     @*<div class="scroll-top d-lg-none">

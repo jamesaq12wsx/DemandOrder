@@ -128,17 +128,17 @@
         @Html.Hidden("deptName", ViewData["deptName"])
         @Html.Hidden("data", Model.ToList())
 
-        Order Seqence:
-        @Html.RadioButton("orderSeq", "Seq") Seq
-        @Html.RadioButton("orderSeq", "Dec") Dec
+        排列方式:
+        @Html.RadioButton("orderBy", "OrderID", new { @checked="checked" }) 需求單編號
+        @Html.RadioButton("orderBy", "Date") 開始日期
+        @Html.RadioButton("orderBy", "OrderName") 需求單主旨 <br />
+        排列順序:
+        @Html.RadioButton("orderSeq", "Seq", new { @checked = "checked" }) 小到大
+        @Html.RadioButton("orderSeq", "Dec") 大到小
         <br />
-        Order By:
-        @Html.RadioButton("orderBy", "OrderID") OrderID
-        @Html.RadioButton("orderBy", "Date") Date
-        @Html.RadioButton("orderBy", "OrderName") OrderName <br />
-        Search:
+        搜尋需求單主旨:
         @Html.TextBox("SearchString")
-        <input type="submit" value="Order" />
+        <input type="submit" value="確認" />
     </p>
 }
 
@@ -189,7 +189,7 @@
             @Html.DisplayFor(modelItem => item.State)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ExpectStartDate)
+            @Html.DisplayFor(modelItem => item.ExpectStartDate, "{0:dd-MM-yyyy}")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CloseDate)

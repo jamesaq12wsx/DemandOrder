@@ -180,7 +180,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="font-family:微軟正黑體">需求單受理狀態</h2>
+<h2 style="font-family:微軟正黑體">需求單資訊中心表單</h2>
 
 @*order 部門選擇*@
 <div class="row">
@@ -219,38 +219,46 @@
 
 <br />
 
-<div>
-    <table class="table" style="font-family:微軟正黑體">
-        <tr bgcolor="#5f89cc" style="color:white">
-            <th>
-                @Html.DisplayName("需求單")
-            </th>
+<table class="table" style="font-family:微軟正黑體">
+    <tr bgcolor="#5f89cc" style="color:white">
+        <th>
+            @Html.DisplayName("需求單")
+        </th>
 
-            @{
-                var overAYear = (DateTime.Now - Model.SearchDate).Days > 365 ? true : false;
+        @{
+            var overAYear = (DateTime.Now - Model.SearchDate).Days > 365 ? true : false;
 
 
-                for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++)
+            {
+                if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
                 {
-                    if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
-                    {
-                        break;
-                    }
-
-                    <th align="center">
-                        @Html.DisplayName(string.Format("{0}年{1}月", Model.SearchDate.AddMonths(i).Year, Model.SearchDate.AddMonths(i).Month))
-                    </th>
+                    break;
                 }
 
+                <th align="center">
+                    @Html.DisplayName(string.Format("{0}年{1}月", Model.SearchDate.AddMonths(i).Year, Model.SearchDate.AddMonths(i).Month))
+                </th>
             }
-        </tr>
+            
 
-        <tr bgcolor="#e5ecf9">
+            @*for (int i = -12; i < 0; i++)
+            {
+                <th>
+                    @Html.DisplayName(string.Format("{0}年{1}月", DateTime.Now.AddMonths(i).Year, DateTime.Now.AddMonths(i).Month))
+                </th>
+            }*@
+        }
 
-            @*state若為 受理就是非結案*@
-            <th>受理</th>
+        <th></th>
+    </tr>
 
-            @{
+    <tr style="color:#c7d3e8;">
+
+        @*state若為 受理就是非結案*@
+        <th>受理</th>
+
+        @{ 
             for (int i = 0; i < 12; i++)
             {
                 if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
@@ -272,15 +280,15 @@
 
                 </td>
             }
-            }
+        }
 
-        </tr>
+    </tr>
 
-        <tr bgcolor="#c1d8ff">
+    <tr>
 
-            <th>結案</th>
+        <th>結案</th>
 
-            @{
+        @{
             for (int i = 0; i < 12; i++)
             {
                 if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
@@ -303,15 +311,15 @@
 
                 </td>
             }
-            }
+        }
 
-        </tr>
+    </tr>
 
-        <tr bgcolor="#e5ecf9">
+    <tr style="color:#c7d3e8;">
 
-            <th>未完成</th>
+        <th>未完成</th>
 
-            @{
+        @{
             for (int i = 0; i < 12; i++)
             {
                 if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
@@ -334,15 +342,15 @@
 
                 </td>
             }
-            }
+        }
+        
+    </tr>
 
-        </tr>
+    <tr>
 
-        <tr bgcolor="#c1d8ff">
+        <th>累計未完成</th>
 
-            <th>累計未完成</th>
-
-            @{
+        @{
             for (int i = 0; i < 12; i++)
             {
                 if (Model.SearchDate.AddMonths(i).Year == DateTime.Now.Year && Model.SearchDate.AddMonths(i).Month == DateTime.Now.Month)
@@ -363,12 +371,11 @@
 
                 </td>
             }
-            }
+        }
 
-        </tr>
+    </tr>
 
-    </table>
-</div>
+</table>
 
 <br />
 
@@ -392,7 +399,7 @@
         </th>
     </tr>
 
-    <tr bgcolor="#e5ecf9">
+    <tr>
 
         <th>受理件數</th>
 
@@ -417,7 +424,7 @@
 
     </tr>
 
-    <tr bgcolor="#c1d8ff">
+    <tr>
 
         <th>完成件數</th>
 

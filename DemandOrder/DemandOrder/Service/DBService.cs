@@ -202,17 +202,13 @@ namespace DemandOrder.Service
 
             reqDetail.ReqStatus = state;
 
-            if(state == "5" && !order.CaseCloseDate.HasValue)
+            if(state == "5")
             {
                 reqDetail.ReqCloseDate = DateTime.Now.Date;
             }
-            else if(state != "5" && order.CaseCloseDate.HasValue)
+            else if(state != "5")
             {
                 reqDetail.ReqCloseDate = null;
-            }
-            else if (order.CaseCloseDate.HasValue)
-            {
-                reqDetail.ReqStatus = "5";
             }
 
             //_db.Entry(reqDetail).State = EntityState.Modified;

@@ -162,6 +162,7 @@
     <Compile Include="Controllers\DateValidController.cs" />
     <Compile Include="Controllers\DemandOrderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +220,7 @@
     <Compile Include="Models\Estimate.cs">
       <DependentUpon>RequireSystem.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Index2ViewModel.cs" />
     <Compile Include="Models\ITEmployee.cs">
       <DependentUpon>RequireSystem.tt</DependentUpon>
     </Compile>
@@ -255,6 +257,7 @@
     <Compile Include="Models\LawCompliance.cs">
       <DependentUpon>RequireSystem.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MemberRight.cs">
       <DependentUpon>RequireSystem.tt</DependentUpon>
     </Compile>
@@ -410,6 +413,24 @@
     <Compile Include="Models\tmpDNEED.cs">
       <DependentUpon>RequireSystem.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserID.cs">
+      <DependentUpon>UserSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserSystem.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\WBSItem.cs">
       <DependentUpon>RequireSystem.tt</DependentUpon>
     </Compile>
@@ -430,11 +451,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DBService.cs" />
+    <Compile Include="Service\UserDBService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\freelancer.css" />
     <Content Include="Content\freelancer.min.css" />
     <Content Include="Content\myStyleSheet.css" />
     <Content Include="Content\PagedList.css" />
@@ -456,6 +476,16 @@
       <DependentUpon>RequireSystem.edmx</DependentUpon>
       <LastGenOutput>RequireSystem.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\UserSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserSystem.edmx</DependentUpon>
+      <LastGenOutput>UserSystem.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserSystem.edmx</DependentUpon>
+      <LastGenOutput>UserSystem.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -467,6 +497,13 @@
     </EntityDeploy>
     <Content Include="Models\RequireSystem.edmx.diagram">
       <DependentUpon>RequireSystem.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\UserSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserSystem.edmx.diagram">
+      <DependentUpon>UserSystem.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -552,6 +589,7 @@
     <Content Include="vendor\font-awesome\scss\_screen-reader.scss" />
     <Content Include="vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

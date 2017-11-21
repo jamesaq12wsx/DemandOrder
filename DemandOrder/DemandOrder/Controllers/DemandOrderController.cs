@@ -57,6 +57,7 @@ namespace DemandOrder.Controllers
             return View(orders);
         }
 
+
         public ActionResult Index2(int page = 1)
         {
             OrdersCountViewModel orders = new OrdersCountViewModel();
@@ -74,7 +75,7 @@ namespace DemandOrder.Controllers
 
             var group = orders.Orders.GroupBy(model => model.ApplyDept);
 
-            var orderList = group.Skip((page-1) * pageSizeFor2).Take(pageSizeFor2).Select(g => g.ToList()).ToList();
+            var orderGroup = group.Skip((page - 1) * pageSizeFor2).Take(pageSizeFor2);
 
             //orders.Orders = orderList.First();
 
@@ -85,11 +86,46 @@ namespace DemandOrder.Controllers
             return View(orders);
         }
 
+        //public ActionResult Index2(int page = 1)
+        //{
+        //    OrdersCountViewModel orders = new OrdersCountViewModel();
+
+        //    Index2ViewModel orderGroup = new Index2ViewModel();
+
+        //    //orders.Orders = orderLib.GetSimpleData();
+
+        //    //orders.Orders = orderLib.GetSimpleData().Where(model => (model.ExpectStartDate.Date > DateTime.Now.AddYears(-1).Date || (model.ExpectStartDate.Year == DateTime.Now.AddYears(-1).Year && model.ExpectStartDate.Month == DateTime.Now.AddYears(-1).Month))).ToList();
+
+        //    orders.SearchDate = DateTime.Now.AddYears(-1);
+
+        //    var currentPage = page < 1 ? 1 : page;
+
+        //    var group = orders.Orders.GroupBy(model => model.ApplyDept);
+
+        //    group = group.Skip((page - 1) * pageSizeFor2).Take(pageSizeFor2);
+
+        //    orderGroup.OrderGroups = group;
+
+        //    orderGroup.Searchdate = DateTime.Now.AddYears(-1);
+
+        //    //orders.Orders = orderList.First();
+
+        //    //var result = orders.Orders.ToPagedList(currentPage, pageSizeFor2);
+
+
+
+        //    return View(orders);
+        //}
+
         [HttpPost]
         public ActionResult Index2(DateTime SearchDate)
         {
 
             OrdersCountViewModel orders = new OrdersCountViewModel();
+
+            //var currentPage = page < 1 ? 1 : page;
+
+
 
             //orders.Orders = orderLib.GetFakeDataByDept(dept,SearchDate);
 
@@ -97,7 +133,11 @@ namespace DemandOrder.Controllers
 
             //orders.StateList = orderLib.GetFakeStateByDept(dept, SearchDate);
 
+            var group = orders.Orders.GroupBy(model => model.ApplyDept);
+
             orders.SearchDate = SearchDate;
+
+            //orders.SearchDate = DateTime.Now.AddYears(-1);
 
             //orders.selectedDept = dept;
 

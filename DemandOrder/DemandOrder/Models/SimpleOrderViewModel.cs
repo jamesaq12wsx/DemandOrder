@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -23,9 +24,11 @@ namespace DemandOrder.Models
         [DisplayName("狀態")]
         public string State { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         [DisplayName("預計開始日")]
         public DateTime ExpectStartDate { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         [DisplayName("結案日期")]
         public DateTime? CloseDate { get; set; }
 

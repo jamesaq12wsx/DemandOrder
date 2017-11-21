@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'UserDB.dbo.UserID' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="UserID">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="CreatTime" Type="datetime" />
+    <Property Name="LastLoginTime" Type="datetime" />
+    <Property Name="IsLogin" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="UserDBModelStoreContainer">
+    <EntitySet Name="UserID" EntityType="Self.UserID" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserID].[ID] AS [ID], 
+    [UserID].[UserName] AS [UserName], 
+    [UserID].[Password] AS [Password], 
+    [UserID].[Rank] AS [Rank], 
+    [UserID].[CreatTime] AS [CreatTime], 
+    [UserID].[LastLoginTime] AS [LastLoginTime], 
+    [UserID].[IsLogin] AS [IsLogin]
+    FROM [dbo].[UserID] AS [UserID]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

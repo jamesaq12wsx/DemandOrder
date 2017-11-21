@@ -3,3 +3,32 @@
     width: 600px;
     height: 400px;
 }
+
+body {
+    font-family: 微軟正黑體, 'Microsoft JhengHei';
+}
+
+form {
+    font-family: 微軟正黑體;
+}
+
+table{
+    font-family: 微軟正黑體;
+}
+
+a, a.active, a:active, a:focus, a:hover{
+    color: #4f545e;
+}
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-width: 0 0 1px;
+}
+
+#mainNav{
+    padding-bottom:5px;
+    padding-top:5px;
+}
